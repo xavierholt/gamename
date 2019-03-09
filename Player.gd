@@ -12,4 +12,4 @@ func _process(delta):
 		velocity.x += 1
 	get_node("AnimatedSprite").playing = (velocity.length() > 0.5)
 	velocity = velocity.normalized()
-	move_and_slide(velocity * 90)
+	move_and_slide(velocity * 190)

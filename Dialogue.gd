@@ -42,7 +42,7 @@ func begin_hide():
 	
 func _process(delta):
 	if mode == HIDE:
-		if randf() < 0.01:
+		if randf() < 0.001:
 			var s = options[randi() % 4]
 			begin_show(s)
 		return

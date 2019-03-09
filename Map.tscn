@@ -1,18 +1,20 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=18 format=2]
 
-[ext_resource path="res://TileSet.tres" type="TileSet" id=1]
-[ext_resource path="res://Player.gd" type="Script" id=2]
-[ext_resource path="res://Characters/char2.png" type="Texture" id=3]
-[ext_resource path="res://Player1/000.png" type="Texture" id=4]
-[ext_resource path="res://Player1/001.png" type="Texture" id=5]
-[ext_resource path="res://Player1/002.png" type="Texture" id=6]
-[ext_resource path="res://Player1/003.png" type="Texture" id=7]
-[ext_resource path="res://Characters/char1.png" type="Texture" id=8]
-[ext_resource path="res://Follower.gd" type="Script" id=9]
-[ext_resource path="res://Characters/char3.png" type="Texture" id=10]
-[ext_resource path="res://SmallTree.tscn" type="PackedScene" id=11]
-[ext_resource path="res://LargeTree.tscn" type="PackedScene" id=12]
-[ext_resource path="res://Dialogue.gd" type="Script" id=13]
+[ext_resource path="res://Map.gd" type="Script" id=1]
+[ext_resource path="res://TileSet.tres" type="TileSet" id=2]
+[ext_resource path="res://PathSegment.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Player.gd" type="Script" id=4]
+[ext_resource path="res://Characters/char2.png" type="Texture" id=5]
+[ext_resource path="res://Player1/000.png" type="Texture" id=6]
+[ext_resource path="res://Player1/001.png" type="Texture" id=7]
+[ext_resource path="res://Player1/002.png" type="Texture" id=8]
+[ext_resource path="res://Player1/003.png" type="Texture" id=9]
+[ext_resource path="res://Characters/char1.png" type="Texture" id=10]
+[ext_resource path="res://Follower.gd" type="Script" id=11]
+[ext_resource path="res://Characters/char3.png" type="Texture" id=12]
+[ext_resource path="res://SmallTree.tscn" type="PackedScene" id=13]
+[ext_resource path="res://LargeTree.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Dialogue.gd" type="Script" id=15]
 
 [sub_resource type="CircleShape2D" id=1]
 
@@ -22,7 +24,7 @@ radius = 6.0
 [sub_resource type="SpriteFrames" id=2]
 
 animations = [ {
-"frames": [ ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ) ],
+"frames": [ ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ) ],
 "loop": true,
 "name": "default",
 "speed": 6.0
@@ -30,12 +32,17 @@ animations = [ {
 
 [node name="Node" type="Node" index="0"]
 
-[node name="TileMap" type="TileMap" parent="." index="0"]
+script = ExtResource( 1 )
 
-position = Vector2( -0.25, 0 )
+[node name="Map" type="Node2D" parent="." index="0"]
+
 scale = Vector2( 2, 2 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="TileMap" type="TileMap" parent="Map" index="0"]
+
 mode = 0
-tile_set = ExtResource( 1 )
+tile_set = ExtResource( 2 )
 cell_size = Vector2( 16, 16 )
 cell_quadrant_size = 16
 cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
@@ -56,30 +63,39 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="YSort" type="YSort" parent="TileMap" index="0"]
+[node name="PathSegment" parent="Map" index="1" instance=ExtResource( 3 )]
 
+position = Vector2( 256, -256 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="YSort" type="YSort" parent="Map" index="2"]
+
+editor/display_folded = true
+position = Vector2( -0.25, 0 )
 sort_enabled = true
+_sections_unfolded = [ "Transform" ]
 
-[node name="Player" type="KinematicBody2D" parent="TileMap/YSort" index="0"]
+[node name="Player" type="KinematicBody2D" parent="Map/YSort" index="0"]
 
+editor/display_folded = true
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
 collision/safe_margin = 0.08
-script = ExtResource( 2 )
+script = ExtResource( 4 )
 
-[node name="Sprite" type="Sprite" parent="TileMap/YSort/Player" index="0"]
+[node name="Sprite" type="Sprite" parent="Map/YSort/Player" index="0"]
 
 visible = false
-texture = ExtResource( 3 )
+texture = ExtResource( 5 )
 offset = Vector2( 0, -8 )
 _sections_unfolded = [ "Offset" ]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="TileMap/YSort/Player" index="1"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Map/YSort/Player" index="1"]
 
 shape = SubResource( 1 )
 
-[node name="Camera2D" type="Camera2D" parent="TileMap/YSort/Player" index="2"]
+[node name="Camera2D" type="Camera2D" parent="Map/YSort/Player" index="2"]
 
 anchor_mode = 1
 rotating = false
@@ -104,75 +120,76 @@ editor_draw_screen = true
 editor_draw_limits = false
 editor_draw_drag_margin = false
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="TileMap/YSort/Player" index="3"]
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Map/YSort/Player" index="3"]
 
 frames = SubResource( 2 )
 animation = "default"
 offset = Vector2( 0, -8 )
 
-[node name="Follower1" type="Sprite" parent="TileMap/YSort" index="1"]
+[node name="Follower1" type="Sprite" parent="Map/YSort" index="1"]
 
 position = Vector2( 63.5, -2.5 )
-texture = ExtResource( 8 )
+texture = ExtResource( 10 )
 offset = Vector2( 0, -8 )
-script = ExtResource( 9 )
+script = ExtResource( 11 )
 _sections_unfolded = [ "Offset" ]
 leader_name = "Player"
 
-[node name="Follower2" type="Sprite" parent="TileMap/YSort" index="2"]
+[node name="Follower2" type="Sprite" parent="Map/YSort" index="2"]
 
 position = Vector2( 11.125, 19.25 )
-texture = ExtResource( 10 )
+texture = ExtResource( 12 )
 offset = Vector2( 0, -8 )
-script = ExtResource( 9 )
+script = ExtResource( 11 )
 _sections_unfolded = [ "Offset", "Transform" ]
 leader_name = "Follower1"
 
-[node name="SmallTree" parent="TileMap/YSort" index="3" instance=ExtResource( 11 )]
+[node name="SmallTree" parent="Map/YSort" index="3" instance=ExtResource( 13 )]
 
 position = Vector2( 116, -55.5 )
 
-[node name="SmallTree2" parent="TileMap/YSort" index="4" instance=ExtResource( 11 )]
+[node name="SmallTree2" parent="Map/YSort" index="4" instance=ExtResource( 13 )]
 
 position = Vector2( 127, 57.5 )
 
-[node name="SmallTree3" parent="TileMap/YSort" index="5" instance=ExtResource( 11 )]
+[node name="SmallTree3" parent="Map/YSort" index="5" instance=ExtResource( 13 )]
 
 position = Vector2( 39, 91 )
 
-[node name="SmallTree4" parent="TileMap/YSort" index="6" instance=ExtResource( 11 )]
+[node name="SmallTree4" parent="Map/YSort" index="6" instance=ExtResource( 13 )]
 
 position = Vector2( 119.5, 41.5 )
 
-[node name="SmallTree5" parent="TileMap/YSort" index="7" instance=ExtResource( 11 )]
+[node name="SmallTree5" parent="Map/YSort" index="7" instance=ExtResource( 13 )]
 
 position = Vector2( -112.5, -52.5 )
 
-[node name="LargeTree" parent="TileMap/YSort" index="8" instance=ExtResource( 12 )]
+[node name="LargeTree" parent="Map/YSort" index="8" instance=ExtResource( 14 )]
 
 position = Vector2( 188, 117 )
 
-[node name="LargeTree2" parent="TileMap/YSort" index="9" instance=ExtResource( 12 )]
+[node name="LargeTree2" parent="Map/YSort" index="9" instance=ExtResource( 14 )]
 
 position = Vector2( -137.5, -26.5 )
 
-[node name="LargeTree3" parent="TileMap/YSort" index="10" instance=ExtResource( 12 )]
+[node name="LargeTree3" parent="Map/YSort" index="10" instance=ExtResource( 14 )]
 
 position = Vector2( 127.5, -47 )
 
-[node name="LargeTree4" parent="TileMap/YSort" index="11" instance=ExtResource( 12 )]
+[node name="LargeTree4" parent="Map/YSort" index="11" instance=ExtResource( 14 )]
 
 position = Vector2( 144.5, 39 )
 
-[node name="CanvasLayer" type="CanvasLayer" parent="." index="1"]
+[node name="GUI" type="CanvasLayer" parent="." index="1"]
 
+editor/display_folded = true
 layer = 1
 offset = Vector2( 0, 0 )
 rotation = 0.0
 scale = Vector2( 1, 1 )
 transform = Transform2D( 1, 0, 0, 1, 0, 0 )
 
-[node name="Panel" type="Panel" parent="CanvasLayer" index="0"]
+[node name="Panel" type="Panel" parent="GUI" index="0"]
 
 anchor_left = 0.0
 anchor_top = 1.0
@@ -190,7 +207,7 @@ size_flags_horizontal = 1
 size_flags_vertical = 1
 _sections_unfolded = [ "Anchor", "Margin" ]
 
-[node name="Label" type="Label" parent="CanvasLayer/Panel" index="0"]
+[node name="Label" type="Label" parent="GUI/Panel" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -211,7 +228,7 @@ text = "I'm thinking about bacon..."
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
-script = ExtResource( 13 )
+script = ExtResource( 15 )
 _sections_unfolded = [ "Anchor", "Margin", "Rect" ]
 
 
