@@ -30,7 +30,7 @@ animations = [ {
 "speed": 6.0
 } ]
 
-[node name="Node" type="Node" index="0"]
+[node name="Game" type="Node" index="0"]
 
 script = ExtResource( 1 )
 
@@ -182,7 +182,6 @@ position = Vector2( 144.5, 39 )
 
 [node name="GUI" type="CanvasLayer" parent="." index="1"]
 
-editor/display_folded = true
 layer = 1
 offset = Vector2( 0, 0 )
 rotation = 0.0

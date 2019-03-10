@@ -12,8 +12,8 @@ var tiles
 var trees
 
 var enter_direction = null
-var leave_direction
-var next
+var leave_direction = null
+var next            = null
 
 func pave(direction):
 	var wrange
