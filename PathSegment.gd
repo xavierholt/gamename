@@ -69,7 +69,7 @@ func enter(direction):
 	pave(enter_direction)
 
 func foliate():
-	var scene = load("res://SmallTree.tscn")
+	var scene = load("res://Trees/Scenes/AnyTree.tscn")
 	for i in range(12):
 		var tree = scene.instance()
 		trees.add_child(tree)

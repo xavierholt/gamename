@@ -11,5 +11,4 @@ func _process(delta):
 	if Input.is_action_pressed('ui_right'):
 		velocity.x += 1
 	get_node("AnimatedSprite").playing = (velocity.length() > 0.5)
-	velocity = velocity.normalized()
 	move_and_slide(velocity * 190)
