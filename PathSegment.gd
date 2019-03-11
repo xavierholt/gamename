@@ -74,7 +74,6 @@ func foliate():
 		var tree = scene.instance()
 		trees.add_child(tree)
 		tree.position = position + Vector2(randf(), randf()) * 512
-	
 
 func ensure_next(body):
 	if next == null and body.get_script():
