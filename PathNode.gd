@@ -4,6 +4,7 @@ var y
 
 var neighbors = [null, null, null, null]
 var parent = self
+var tile   = null
 
 func _init(map, x, y):
 	self.map = map

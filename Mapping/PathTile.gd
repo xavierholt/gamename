@@ -3,17 +3,14 @@ extends Node2D
 const WIDTH  = 32
 const HEIGHT = 32
 
-const WEST  = 0
-const SOUTH = 1
-const EAST  = 2
-const NORTH = 3
+const NORTH = 0
+const EAST  = 1
+const SOUTH = 2
+const WEST  = 3
 
+var node
 var tiles
 var trees
-
-var enter_direction = null
-var leave_direction = null
-var next            = null
 
 func pave(direction):
 	var wrange
@@ -55,18 +52,14 @@ func _ready():
 	tiles = get_node('Tiles')
 	trees = get_parent().get_node('YSort')
 	get_node('Area').connect('body_entered', self, 'ensure_next')
-	for x in range(WIDTH):
-		for y in range(HEIGHT):
-			tiles.set_cell(x, y, randi() % 101 / 100)
 
-func enter(direction):
-	enter_direction = direction
-	while true:
-		leave_direction = randi() % 3 + 1
-		if leave_direction != direction:
-			pave(leave_direction)
-			break
-	pave(enter_direction)
+func setup(node):
+	self.node = node
+	node.tile = self
+	self.position = Vector2(node.x, node.y) * 512
+	for i in range(4):
+		if node.neighbors[i]:
+			pave(i)
 
 func foliate():
 	var scene = load("res://Trees/Scenes/AnyTree.tscn")
@@ -77,10 +70,12 @@ func foliate():
 
 func ensure_next(body):
 	# TODO: Be smarter about detecting the player character!
-	if next == null and body.get_script():
-		var scene = load("res://PathSegment.tscn")
-		next = scene.instance()
-		get_parent().add_child_below_node(self, next)
-		next.enter((leave_direction + 2) % 4)
-		next.position = position + offset(leave_direction) * 512
-		next.foliate()
+	if not body.get_script(): return
+	if not node: return
+
+	var scene = load("res://Mapping/PathTile.tscn")
+	for n in node.neighbors:
+		if n and n.tile == null:
+			var t = scene.instance()
+			get_parent().add_child_below_node(self, t)
+			t.setup(n)
