@@ -80,6 +80,6 @@ func ensure_next(body):
 		var scene = load("res://PathSegment.tscn")
 		next = scene.instance()
 		get_parent().add_child_below_node(self, next)
-		next.position = position + offset(leave_direction) * 512
 		next.enter((leave_direction + 2) % 4)
+		next.position = position + offset(leave_direction) * 512
 		next.foliate()

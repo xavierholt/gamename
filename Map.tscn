@@ -30,7 +30,7 @@ animations = [ {
 "speed": 6.0
 } ]
 
-[node name="Game" type="Node"]
+[node name="Game" type="Node" index="0"]
 
 script = ExtResource( 1 )
 
@@ -180,15 +180,16 @@ position = Vector2( 127.5, -47 )
 
 position = Vector2( 144.5, 39 )
 
-[node name="GUI" type="CanvasLayer" parent="." index="1"]
+[node name="CanvasLayer" type="CanvasLayer" parent="." index="1"]
 
+editor/display_folded = true
 layer = 1
 offset = Vector2( 0, 0 )
 rotation = 0.0
 scale = Vector2( 1, 1 )
 transform = Transform2D( 1, 0, 0, 1, 0, 0 )
 
-[node name="Panel" type="Panel" parent="GUI" index="0"]
+[node name="Panel" type="Panel" parent="CanvasLayer" index="0"]
 
 anchor_left = 0.0
 anchor_top = 1.0
@@ -206,7 +207,7 @@ size_flags_horizontal = 1
 size_flags_vertical = 1
 _sections_unfolded = [ "Anchor", "Margin" ]
 
-[node name="Label" type="Label" parent="GUI/Panel" index="0"]
+[node name="Label" type="Label" parent="CanvasLayer/Panel" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
