@@ -1,42 +1,42 @@
 [gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Characters/Character.gd" type="Script" id=1]
-[ext_resource path="res://Misha/misha_15.png" type="Texture" id=2]
-[ext_resource path="res://Misha/misha_14.png" type="Texture" id=3]
-[ext_resource path="res://Misha/misha_16.png" type="Texture" id=4]
-[ext_resource path="res://Misha/misha_4.png" type="Texture" id=5]
-[ext_resource path="res://Misha/misha_5.png" type="Texture" id=6]
-[ext_resource path="res://Misha/misha_6.png" type="Texture" id=7]
-[ext_resource path="res://Misha/misha_7.png" type="Texture" id=8]
-[ext_resource path="res://Misha/misha_9.png" type="Texture" id=9]
-[ext_resource path="res://Misha/misha_8.png" type="Texture" id=10]
-[ext_resource path="res://Misha/misha_10.png" type="Texture" id=11]
-[ext_resource path="res://Misha/misha_12.png" type="Texture" id=12]
-[ext_resource path="res://Misha/misha_11.png" type="Texture" id=13]
-[ext_resource path="res://Misha/misha_13.png" type="Texture" id=14]
+[ext_resource path="res://Andrew/andrew_15.png" type="Texture" id=2]
+[ext_resource path="res://Andrew/andrew_14.png" type="Texture" id=3]
+[ext_resource path="res://Andrew/andrew_16.png" type="Texture" id=4]
+[ext_resource path="res://Andrew/andrew_4.png" type="Texture" id=5]
+[ext_resource path="res://Andrew/andrew_5.png" type="Texture" id=6]
+[ext_resource path="res://Andrew/andrew_6.png" type="Texture" id=7]
+[ext_resource path="res://Andrew/andrew_7.png" type="Texture" id=8]
+[ext_resource path="res://Andrew/andrew_9.png" type="Texture" id=9]
+[ext_resource path="res://Andrew/andrew_8.png" type="Texture" id=10]
+[ext_resource path="res://Andrew/andrew_10.png" type="Texture" id=11]
+[ext_resource path="res://Andrew/andrew_12.png" type="Texture" id=12]
+[ext_resource path="res://Andrew/andrew_11.png" type="Texture" id=13]
+[ext_resource path="res://Andrew/andrew_13.png" type="Texture" id=14]
 
-[sub_resource type="SpriteFrames" id=1]
+[sub_resource type="SpriteFrames" id=3]
 
 animations = [ {
 "frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 2 ), ExtResource( 4 ) ],
 "loop": true,
 "name": "walk-north",
-"speed": 7.0
+"speed": 6.0
 }, {
 "frames": [ ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ) ],
 "loop": true,
 "name": "walk-east",
-"speed": 7.0
+"speed": 6.0
 }, {
 "frames": [ ExtResource( 9 ), ExtResource( 10 ), ExtResource( 9 ), ExtResource( 11 ) ],
 "loop": true,
 "name": "walk-west",
-"speed": 7.0
+"speed": 5.0
 }, {
 "frames": [ ExtResource( 12 ), ExtResource( 13 ), ExtResource( 12 ), ExtResource( 14 ) ],
 "loop": true,
 "name": "walk-south",
-"speed": 7.0
+"speed": 5.0
 } ]
 
 [sub_resource type="CircleShape2D" id=2]
@@ -44,7 +44,7 @@ animations = [ {
 custom_solver_bias = 0.0
 radius = 25.0
 
-[node name="Misha" type="KinematicBody2D"]
+[node name="Andrew" type="KinematicBody2D"]
 
 input_pickable = false
 collision_layer = 1
@@ -54,19 +54,20 @@ script = ExtResource( 1 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="." index="0"]
 
-frames = SubResource( 1 )
-animation = "walk-east"
+frames = SubResource( 3 )
+animation = "walk-west"
 offset = Vector2( 0, -50 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
 
 shape = SubResource( 2 )
+disabled = true
 
 [node name="Camera2D" type="Camera2D" parent="." index="2"]
 
 anchor_mode = 1
 rotating = false
-current = true
+current = false
 zoom = Vector2( 1, 1 )
 limit_left = -10000000
 limit_top = -10000000
