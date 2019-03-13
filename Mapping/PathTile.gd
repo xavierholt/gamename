@@ -35,22 +35,18 @@ func pave(direction):
 	for x in wrange:
 		for y in hrange:
 			if randf() > 0.2:
-				tiles.set_cell(x, y, 2)
+				tiles.set_cell(x, y, 1)
 
 func wall(direction):
-	var rng = range(224, 320, 32)
+	var rng = range(1450, 1751, 100)
 	if direction == NORTH:
-		for x in rng:
-			plant(x, 16)
+		for x in rng: plant(x, 50)
 	elif direction == SOUTH:
-		for x in rng:
-			plant(x, 496)
+		for x in rng: plant(x, 3150)
 	elif direction == EAST:
-		for y in rng:
-			plant(496, y)
+		for y in rng: plant(3150, y)
 	elif direction == WEST:
-		for y in rng:
-			plant(16, y)
+		for y in rng: plant(50, y)
 	else:
 		print("Unknown direction!")
 		return
@@ -76,7 +72,7 @@ func _ready():
 func setup(node):
 	self.node = node
 	node.tile = self
-	self.position = Vector2(node.x, node.y) * 512
+	self.position = Vector2(node.x, node.y) * 3200
 	for i in range(4):
 		if node.neighbors[i]:
 			pave(i)
@@ -90,16 +86,23 @@ func plant(x, y):
 	tree.position = position + Vector2(x, y)
 
 func foliate():
-	for i in range(16, 193, 32):
-		plant(i, 192 - i)
-		plant(288 + i, i)
-		plant(i, 288 + i)
-		plant(288 + i, 480 - i)
+	for a in range(0, 91, 4.5):
+		var x = 1300 * cos(deg2rad(a))
+		var y = 1300 * sin(deg2rad(a))
+		plant(1350 - x, 1350 - y)
+		plant(1850 + x, 1350 - y)
+		plant(1850 + x, 1850 + y)
+		plant(1350 - x, 1850 + y)
+	for i in range(50):
+		var x = randi() % 3200
+		var y = randi() % 3200
+		var c = tiles.get_cell(x/100, y/100)
+		if c == 0: plant(x, y)
 
 func ensure_next(body):
 	# TODO: Be smarter about detecting the player character!
 	if not body.get_script(): return
-	if not node: return
+#	if not node: return
 
 	var scene = load("res://Mapping/PathTile.tscn")
 	for n in node.neighbors:

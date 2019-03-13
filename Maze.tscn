@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Maze.gd" type="Script" id=1]
 [ext_resource path="res://Mapping/PathTile.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Characters/Chibs.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Characters/Misha.tscn" type="PackedScene" id=3]
 
 [node name="Maze" type="Node" index="0"]
 
@@ -10,15 +10,20 @@ script = ExtResource( 1 )
 
 [node name="Map" type="Node2D" parent="." index="0"]
 
+editor/display_folded = true
+_sections_unfolded = [ "Transform" ]
+
 [node name="PathTile" parent="Map" index="0" instance=ExtResource( 2 )]
 
 [node name="YSort" type="YSort" parent="Map" index="1"]
 
+editor/display_folded = true
 sort_enabled = true
+_sections_unfolded = [ "Transform" ]
 
-[node name="Player" parent="Map/YSort" index="0" instance=ExtResource( 3 )]
+[node name="Misha" parent="Map/YSort" index="0" instance=ExtResource( 3 )]
 
-position = Vector2( 256, 256 )
+position = Vector2( 1600, 1600 )
 _sections_unfolded = [ "Transform" ]
 
 
