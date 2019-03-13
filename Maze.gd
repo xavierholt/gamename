@@ -1,6 +1,6 @@
 extends Node
 
-var Map = load("res://PathMap.gd")
+var Map = load("res://Mapping/PathMap.gd")
 var map
 
 func _ready():

@@ -1,5 +1,5 @@
-var Node = load("res://PathNode.gd")
-var Edge = load("res://PathEdge.gd")
+var Node = load("res://Mapping/PathNode.gd")
+var Edge = load("res://Mapping/PathEdge.gd")
 
 const DX = [ 0, +1,  0, -1]
 const DY = [-1,  0, +1,  0]

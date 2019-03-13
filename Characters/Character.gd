@@ -44,15 +44,6 @@ func follow():
 		return
 	animator.playing = true
 	
-#	if   animator.animation == 'walk-north':
-#		if velocity.y < 0: return
-#	elif animator.animation == 'walk-east':
-#		if velocity.x > 0: return
-#	elif animator.animation == 'walk-south':
-#		if velocity.y > 0: return
-#	elif animator.animation == 'walk-west':
-#		if velocity.x < 0: return
-
 	if abs(velocity.x) < abs(velocity.y):
 		if velocity.y < 0:
 			animator.animation = 'walk-north'

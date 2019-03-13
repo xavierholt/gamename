@@ -1,21 +1,21 @@
 [gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Characters/Character.gd" type="Script" id=1]
-[ext_resource path="res://Andrew/andrew_15.png" type="Texture" id=2]
-[ext_resource path="res://Andrew/andrew_14.png" type="Texture" id=3]
-[ext_resource path="res://Andrew/andrew_16.png" type="Texture" id=4]
-[ext_resource path="res://Andrew/andrew_4.png" type="Texture" id=5]
-[ext_resource path="res://Andrew/andrew_5.png" type="Texture" id=6]
-[ext_resource path="res://Andrew/andrew_6.png" type="Texture" id=7]
-[ext_resource path="res://Andrew/andrew_7.png" type="Texture" id=8]
-[ext_resource path="res://Andrew/andrew_9.png" type="Texture" id=9]
-[ext_resource path="res://Andrew/andrew_8.png" type="Texture" id=10]
-[ext_resource path="res://Andrew/andrew_10.png" type="Texture" id=11]
-[ext_resource path="res://Andrew/andrew_12.png" type="Texture" id=12]
-[ext_resource path="res://Andrew/andrew_11.png" type="Texture" id=13]
-[ext_resource path="res://Andrew/andrew_13.png" type="Texture" id=14]
+[ext_resource path="res://Characters/Andrew/andrew_15.png" type="Texture" id=2]
+[ext_resource path="res://Characters/Andrew/andrew_14.png" type="Texture" id=3]
+[ext_resource path="res://Characters/Andrew/andrew_16.png" type="Texture" id=4]
+[ext_resource path="res://Characters/Andrew/andrew_4.png" type="Texture" id=5]
+[ext_resource path="res://Characters/Andrew/andrew_5.png" type="Texture" id=6]
+[ext_resource path="res://Characters/Andrew/andrew_6.png" type="Texture" id=7]
+[ext_resource path="res://Characters/Andrew/andrew_7.png" type="Texture" id=8]
+[ext_resource path="res://Characters/Andrew/andrew_9.png" type="Texture" id=9]
+[ext_resource path="res://Characters/Andrew/andrew_8.png" type="Texture" id=10]
+[ext_resource path="res://Characters/Andrew/andrew_10.png" type="Texture" id=11]
+[ext_resource path="res://Characters/Andrew/andrew_12.png" type="Texture" id=12]
+[ext_resource path="res://Characters/Andrew/andrew_11.png" type="Texture" id=13]
+[ext_resource path="res://Characters/Andrew/andrew_13.png" type="Texture" id=14]
 
-[sub_resource type="SpriteFrames" id=3]
+[sub_resource type="SpriteFrames" id=1]
 
 animations = [ {
 "frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 2 ), ExtResource( 4 ) ],
@@ -54,7 +54,7 @@ script = ExtResource( 1 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="." index="0"]
 
-frames = SubResource( 3 )
+frames = SubResource( 1 )
 animation = "walk-west"
 offset = Vector2( 0, -50 )
 
