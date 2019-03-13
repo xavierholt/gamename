@@ -12,6 +12,8 @@ var node
 var tiles
 var trees
 
+var anytree = load("res://Trees/Scenes/AnyTree.tscn")
+
 func pave(direction):
 	var wrange
 	var hrange
@@ -34,6 +36,24 @@ func pave(direction):
 		for y in hrange:
 			if randf() > 0.2:
 				tiles.set_cell(x, y, 2)
+
+func wall(direction):
+	var rng = range(224, 320, 32)
+	if direction == NORTH:
+		for x in rng:
+			plant(x, 16)
+	elif direction == SOUTH:
+		for x in rng:
+			plant(x, 496)
+	elif direction == EAST:
+		for y in rng:
+			plant(496, y)
+	elif direction == WEST:
+		for y in rng:
+			plant(16, y)
+	else:
+		print("Unknown direction!")
+		return
 
 func offset(direction):
 	if direction == NORTH:
@@ -60,13 +80,21 @@ func setup(node):
 	for i in range(4):
 		if node.neighbors[i]:
 			pave(i)
+		else:
+			wall(i)
+	foliate()
+
+func plant(x, y):
+	var tree = anytree.instance()
+	trees.add_child(tree)
+	tree.position = position + Vector2(x, y)
 
 func foliate():
-	var scene = load("res://Trees/Scenes/AnyTree.tscn")
-	for i in range(12):
-		var tree = scene.instance()
-		trees.add_child(tree)
-		tree.position = position + Vector2(randf(), randf()) * 512
+	for i in range(16, 193, 32):
+		plant(i, 192 - i)
+		plant(288 + i, i)
+		plant(i, 288 + i)
+		plant(288 + i, 480 - i)
 
 func ensure_next(body):
 	# TODO: Be smarter about detecting the player character!
