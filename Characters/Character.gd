@@ -38,7 +38,7 @@ func lead(d):
 		animator.animation = 'walk-west'
 
 func follow():
-	if velocity.length() < 0.5:
+	if velocity.length_squared() < 0.5:
 		animator.playing = false
 		animator.frame   = 0
 		return
