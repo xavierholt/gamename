@@ -13,6 +13,7 @@ var tiles
 var trees
 
 var anytree = load("res://Trees/Scenes/AnyTree.tscn")
+var anysign = load("res://SmallObjects/Scenes/AnySign.tscn")
 
 func pave(direction):
 	var wrange
@@ -78,6 +79,7 @@ func setup(node):
 			pave(i)
 		else:
 			wall(i)
+	setup_signs()
 	foliate()
 
 func plant(x, y):
@@ -98,6 +100,23 @@ func foliate():
 		var y = randi() % 3200
 		var c = tiles.get_cell(x/100, y/100)
 		if c == 0: plant(x, y)
+
+func add_sign(x, y):
+	var s = anysign.instance()
+	trees.add_child(s)
+	s.position = position + Vector2(x, y)
+
+func setup_signs():
+	if node.arity() < 3:
+		return
+	if node.neighbors[0]:
+		add_sign(1350, 1200)
+	if node.neighbors[1]:
+		add_sign(2000, 1350)
+	if node.neighbors[2]:
+		add_sign(1850, 2000)
+	if node.neighbors[3]:
+		add_sign(1200, 1850)
 
 func ensure_next(body):
 	# TODO: Be smarter about detecting the player character!

@@ -5,7 +5,7 @@
 [ext_resource path="res://Characters/Misha.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Characters/Andrew.tscn" type="PackedScene" id=4]
 
-[node name="Maze" type="Node"]
+[node name="Maze" type="Node" index="0"]
 
 script = ExtResource( 1 )
 
@@ -30,5 +30,53 @@ _sections_unfolded = [ "Transform" ]
 
 position = Vector2( 1500, 1500 )
 _sections_unfolded = [ "Transform", "Z Index" ]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." index="1"]
+
+layer = 1
+offset = Vector2( 0, 0 )
+rotation = 0.0
+scale = Vector2( 1, 1 )
+transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+
+[node name="Panel" type="Panel" parent="CanvasLayer" index="0"]
+
+anchor_left = 0.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 10.0
+margin_top = -100.0
+margin_right = -10.0
+margin_bottom = -10.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+_sections_unfolded = [ "Anchor", "Margin" ]
+
+[node name="Label" type="Label" parent="CanvasLayer/Panel" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 10.0
+margin_top = 10.0
+margin_right = -10.0
+margin_bottom = -10.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+text = "I'm still thinking about bacon!"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Margin" ]
 
 

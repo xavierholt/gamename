@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://SmallObjects/sign3.png" type="Texture" id=1]
+
+[node name="AnySign" type="Sprite"]
+
+texture = ExtResource( 1 )
+offset = Vector2( 0, -40 )
+_sections_unfolded = [ "Offset" ]
+
+
