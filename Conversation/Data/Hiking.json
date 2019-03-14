@@ -1,0 +1,25 @@
+{
+  "lines": [
+    {"char": "Misha",  "text": "Do any of us actually LIKE hiking?"},
+    {"char": "Andrew", "text": "Umm..."},
+    {"char": "Andrew", "text": "Well..."},
+    {"char": "Killi",  "text": "I hiked away from some bears once."},
+    {"char": "Andrew", "text": "You what?"},
+    {"char": "Killi",  "text": "Back in high school."},
+    {"char": "Killi",  "text": "I went to this weird hairdresser."},
+    {"char": "Killi",  "text": "I was in there a long time."},
+    {"char": "Killi",  "text": "And when I came out my car was surrounded by bears."},
+    {"char": "Killi",  "text": "So I had to hike home."},
+    {"char": "Killi",  "text": "My dad didn't believe me about the bears."},
+    {"char": "Andrew", "text": "What kind of hairdresser do you go to?"},
+    {"char": "Killi",  "text": "I dunno."},
+    {"char": "Killi",  "text": "I think she was from Vermont."},
+    {"char": "Andrew", "text": "Oh."},
+
+    {"text": "", "wait": 5},
+
+    {"char": "Misha",  "text": "So... hiking?"},
+    {"char": "Andrew", "text": "It's better than being eaten I guess."},
+    {"char": "Killi",  "text": "Yeah."}
+  ]
+}

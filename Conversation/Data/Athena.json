@@ -1,0 +1,23 @@
+{
+  "lines": [
+    {"char": "Killi",  "text": "Is that a duck coming out of your head?"},
+    {"char": "Andrew", "text": "Ummm..."},
+    {"char": "Andrew", "text": "What?"},
+    {"char": "Misha",  "text": "You know.  Your head duck."},
+    {"char": "Misha",  "text": "Purple, perky..."},
+    {"char": "Misha",  "text": "Glorious bill extruding from your parietal eminence..."},
+    {"char": "Killi",  "text": "It wiggles when you walk."},
+    {"char": "Killi",  "text": "I think it's trying to get out."},
+    {"char": "Andrew", "text": "Wait.  No.  Are we", "wait": 0},
+    {"char": "Misha",  "text": "Oh, likely."},
+    {"char": "Misha",  "text": "An id unchained can do terrible things to waterfowl."},
+    {"char": "Misha",  "text": "Unspeakable things."},
+    {"char": "Andrew", "text": "Are we making fun of my hairstyle?"},
+    {"char": "Andrew", "text": "Is this REALLY the most effective way to", "wait": 0},
+    {"char": "Killi",  "text": "Hang in there little guy!"},
+    {"char": "Misha",  "text": "Maybe if we pass a farm you can find a chisel."},
+    {"char": "Andrew", "text": ". . .", "ping": 1},
+    {"text": "", "wait": 12},
+    {"char": "Killi",  "text": "I will name her Athena."}
+  ]
+}
