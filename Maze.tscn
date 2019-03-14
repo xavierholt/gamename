@@ -1,19 +1,20 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Maze.gd" type="Script" id=1]
 [ext_resource path="res://Mapping/PathTile.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Characters/Misha.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Characters/Andrew.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Conversation/Player.gd" type="Script" id=5]
-[ext_resource path="res://Characters/Misha/Faces/default.png" type="Texture" id=6]
-[ext_resource path="res://Fonts/ComicNeue-Regular.ttf" type="DynamicFontData" id=7]
+[ext_resource path="res://Characters/Killi.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Conversation/Player.gd" type="Script" id=6]
+[ext_resource path="res://Characters/Misha/Faces/default.png" type="Texture" id=7]
+[ext_resource path="res://Fonts/ComicNeue-Regular.ttf" type="DynamicFontData" id=8]
 
 [sub_resource type="DynamicFont" id=1]
 
 size = 32
 use_mipmaps = false
 use_filter = false
-font_data = ExtResource( 7 )
+font_data = ExtResource( 8 )
 _sections_unfolded = [ "Font", "Settings" ]
 
 [node name="Game" type="Node" index="0"]
@@ -45,6 +46,11 @@ _sections_unfolded = [ "Transform" ]
 position = Vector2( 1500, 1500 )
 _sections_unfolded = [ "Transform", "Z Index" ]
 
+[node name="Killi" parent="Map/YSort" index="2" instance=ExtResource( 5 )]
+
+position = Vector2( 1550, 1400 )
+_sections_unfolded = [ "Transform" ]
+
 [node name="GUI" type="CanvasLayer" parent="." index="1"]
 
 layer = 1
@@ -69,13 +75,13 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-script = ExtResource( 5 )
+script = ExtResource( 6 )
 _sections_unfolded = [ "Anchor", "Margin" ]
 
 [node name="Portrait" type="Sprite" parent="GUI/Panel" index="0"]
 
 position = Vector2( 100, 0 )
-texture = ExtResource( 6 )
+texture = ExtResource( 7 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Dialog" type="Label" parent="GUI/Panel" index="1"]

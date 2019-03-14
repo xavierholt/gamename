@@ -17,7 +17,7 @@
     {"char": "Killi",  "text": "Hang in there little guy!"},
     {"char": "Misha",  "text": "Maybe if we pass a farm you can find a chisel."},
     {"char": "Andrew", "text": ". . .", "ping": 1},
-    {"text": "", "wait": 12},
+    {"text": "", "wait": 6},
     {"char": "Killi",  "text": "I will name her Athena."}
   ]
 }

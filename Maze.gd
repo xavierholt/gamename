@@ -20,6 +20,8 @@ func _ready():
 	get_node("Map/PathTile").setup(map.node(0, 0))
 	var misha  = get_node("Map/YSort/Misha")
 	var andrew = get_node("Map/YSort/Andrew")
+	var killi  = get_node("Map/YSort/Killi")
+	killi.leader  = andrew
 	andrew.leader = misha
 	
 	auto_conversation("walk")
