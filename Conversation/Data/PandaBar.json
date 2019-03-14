@@ -1,0 +1,17 @@
+{
+  "lines": [
+    {"char": "Misha",  "text": "It is also locked. Animal-shape inside?"},
+    {"char": "Killi",  "text": "Zombies? Run!","face":"shocked"},
+    {"char": "Misha",  "text": "Wait! They are not zombies, they are just pandas."},
+    {"char": "Andrew",  "text": "Why are pandas locked in a bar?","face": "bsod"},
+    {"char": "Misha",  "text": "It's a panda bar."},
+    {"char": "Misha",  "text": "One of my father’s subsidiary companies employs fish as waiters."},
+    {"char": "Andrew",  "text": "???","face": "shocked"},
+    {"char": "Misha",  "text": "The service is terrible, but that ’s a good way to get samples of fish’s nerve impulses. "},
+    {"char": "Andrew",  "text": "How much do they earn?"},
+    {"char": "Misha",  "text": "You know, people's curiosity."},
+    {"char": "Misha",  "text": "Could we take one panda back as our food?"},
+    {"char": "Andrew",  "text": "Don’t do that. They have reasons to be locked here."},
+
+  ]
+}
