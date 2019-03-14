@@ -1,0 +1,14 @@
+{
+  "lines": [
+    {"char": "Andrew", "text": "So I've been thinking..."},
+    {"char": "Andrew", "text": "You know dinosaurs?"},
+    {"char": "Misha",  "text": "Never heard of them."},
+    {"char": "Andrew", "text": "Shut up.", "face": "annoyed"},
+    {"char": "Andrew", "text": "Well, if dinosaurs turn into oil..."},
+    {"char": "Andrew", "text": "And then oil gets turned into plastic..."},
+    {"char": "Andrew", "text": "Then you know those toy dinosaurs you had as a kid?"},
+    {"char": "Andrew", "text": "THEY WERE REAL!"},
+    {"char": "Killi",  "text": "I'm sorry, Parasaurolophus!", "face": "shocked"},
+    {"char": "Killi",  "text": "I said such terrible things...", "face": "sad"}
+  ]
+}

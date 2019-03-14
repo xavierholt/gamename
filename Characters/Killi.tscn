@@ -1,41 +1,41 @@
 [gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Characters/Character.gd" type="Script" id=1]
-[ext_resource path="res://Killi/killi_15.png" type="Texture" id=2]
-[ext_resource path="res://Killi/killi_14.png" type="Texture" id=3]
-[ext_resource path="res://Killi/killi_16.png" type="Texture" id=4]
-[ext_resource path="res://Killi/killi_6.png" type="Texture" id=5]
-[ext_resource path="res://Killi/killi_5.png" type="Texture" id=6]
-[ext_resource path="res://Killi/killi_7.png" type="Texture" id=7]
-[ext_resource path="res://Killi/killi_9.png" type="Texture" id=8]
-[ext_resource path="res://Killi/killi_8.png" type="Texture" id=9]
-[ext_resource path="res://Killi/killi_10.png" type="Texture" id=10]
-[ext_resource path="res://Killi/killi_12.png" type="Texture" id=11]
-[ext_resource path="res://Killi/killi_11.png" type="Texture" id=12]
-[ext_resource path="res://Killi/killi_13.png" type="Texture" id=13]
+[ext_resource path="res://Characters/Killi/killi_15.png" type="Texture" id=2]
+[ext_resource path="res://Characters/Killi/killi_14.png" type="Texture" id=3]
+[ext_resource path="res://Characters/Killi/killi_16.png" type="Texture" id=4]
+[ext_resource path="res://Characters/Killi/killi_6.png" type="Texture" id=5]
+[ext_resource path="res://Characters/Killi/killi_5.png" type="Texture" id=6]
+[ext_resource path="res://Characters/Killi/killi_7.png" type="Texture" id=7]
+[ext_resource path="res://Characters/Killi/killi_9.png" type="Texture" id=8]
+[ext_resource path="res://Characters/Killi/killi_8.png" type="Texture" id=9]
+[ext_resource path="res://Characters/Killi/killi_10.png" type="Texture" id=10]
+[ext_resource path="res://Characters/Killi/killi_12.png" type="Texture" id=11]
+[ext_resource path="res://Characters/Killi/killi_11.png" type="Texture" id=12]
+[ext_resource path="res://Characters/Killi/killi_13.png" type="Texture" id=13]
 
-[sub_resource type="SpriteFrames" id=3]
+[sub_resource type="SpriteFrames" id=1]
 
 animations = [ {
 "frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 2 ), ExtResource( 4 ) ],
 "loop": true,
 "name": "walk-north",
-"speed": 5.0
+"speed": 6.0
 }, {
 "frames": [ ExtResource( 5 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 7 ) ],
 "loop": true,
 "name": "walk-east",
-"speed": 5.0
+"speed": 6.0
 }, {
 "frames": [ ExtResource( 8 ), ExtResource( 9 ), ExtResource( 8 ), ExtResource( 10 ) ],
 "loop": true,
 "name": "walk-west",
-"speed": 5.5
+"speed": 6.0
 }, {
 "frames": [ ExtResource( 11 ), ExtResource( 12 ), ExtResource( 11 ), ExtResource( 13 ) ],
 "loop": true,
 "name": "walk-south",
-"speed": 5.0
+"speed": 6.0
 } ]
 
 [sub_resource type="CircleShape2D" id=2]
@@ -53,7 +53,7 @@ script = ExtResource( 1 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="." index="0"]
 
-frames = SubResource( 3 )
+frames = SubResource( 1 )
 animation = "walk-east"
 offset = Vector2( 0, -50 )
 

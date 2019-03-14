@@ -10,10 +10,10 @@
     {"char": "Andrew", "text": "I don't think I even remember my last sandwich..."},
     {"char": "Andrew", "text": "I should have paid more attention."},
     {"char": "Andrew", "text": "What a waste...", "wait": 2},
-    {"char": "Killi",  "text": "I remember mine!"},
+    {"char": "Killi",  "text": "I remember mine!", "face": "happy"},
     {"char": "Killi",  "text": "It had kiwis and baloney and cool whip!"},
     {"char": "Killi",  "text": "I ate it on a Tuesday."},
-    {"char": "Misha",  "text": ". . .", "ping": 0.5},
+    {"char": "Misha",  "text": ". . .", "face": "bsod", "ping": 0.5},
     {"char": "Andrew", "text": "Never mind."},
     {"char": "Andrew", "text": "Sandwiches are tainted forever."}
   ]

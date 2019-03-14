@@ -31,12 +31,12 @@ animations = [ {
 "frames": [ ExtResource( 9 ), ExtResource( 10 ), ExtResource( 9 ), ExtResource( 11 ) ],
 "loop": true,
 "name": "walk-west",
-"speed": 5.0
+"speed": 6.0
 }, {
 "frames": [ ExtResource( 12 ), ExtResource( 13 ), ExtResource( 12 ), ExtResource( 14 ) ],
 "loop": true,
 "name": "walk-south",
-"speed": 5.0
+"speed": 6.0
 } ]
 
 [sub_resource type="CircleShape2D" id=2]
