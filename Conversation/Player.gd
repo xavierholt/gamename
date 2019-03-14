@@ -32,7 +32,9 @@ func begin_show():
 		self.hide()
 		return
 	if line.character:
-		var path = "res://Characters/" + line.character + "/Faces/default.png"
+		var f = line.face
+		var c = line.character
+		var path = "res://Characters/" + c + "/Faces/" +f + ".png"
 		portrait.texture = load(path)
 	mode        = SHOW
 	dialog.text = ""

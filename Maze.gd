@@ -31,6 +31,7 @@ func auto_conversation(pool):
 	if panel.line: return
 	
 	var c = pools.get(pool, stats)
+	if not c: return
 	panel.play(c)
 	pools.del(c)
 

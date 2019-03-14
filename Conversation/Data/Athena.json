@@ -17,9 +17,11 @@
     {"char": "Killi",  "text": "Hang in there little guy!"},
     {"char": "Misha",  "text": "Maybe if we pass a farm you can find a chisel."},
     {"char": "Andrew", "text": ". . .", "ping": 0.5},
+
     {"text": "", "wait": 5},
-    {"char": "Killi",  "text": "I will name her Athena."},
-    {"char": "Killi",  "text": "She will be my duck friend."},
+
+    {"char": "Killi",  "text": "I will name her Athena.", "face": "happy"},
+    {"char": "Killi",  "text": "She will be my duck friend.", "face": "happy"},
     {"char": "Misha",  "text": "Adorable."}
   ]
 }

@@ -1,0 +1,10 @@
+{
+  "lines": [
+    {"char": "Killi",  "text": "Male gymnasts get long pants and no sleeves..."},
+    {"char": "Killi",  "text": "But female gymnasts get long sleeves and no pants!"},
+    {"char": "Killi",  "text": "Why IS that?"},
+    {"char": "Misha",  "text": "Must be a sex-linked trait."},
+    {"char": "Killi",  "text": "Ohhhhhhhhhhhhhhhhhh.", "ping": 0.1},
+    {"char": "Killi",  "text": "That makes sense."}
+  ]
+}

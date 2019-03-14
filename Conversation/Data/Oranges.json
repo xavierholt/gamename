@@ -1,0 +1,18 @@
+{
+  "lines": [
+    {"char": "Killi",  "text": "So many trees!"},
+    {"char": "Killi",  "text": "You think we can eat any of them?"},
+    {"char": "Misha",  "text": "The green ones have apples."},
+    {"char": "Misha",  "text": "Also acorns."},
+    {"char": "Andrew", "text": "Um..."},
+    {"char": "Killi",  "text": "What about the orange ones?"},
+    {"char": "Misha",  "text": "Oranges."},
+    {"char": "Misha",  "text": "Obviously."},
+    {"char": "Killi",  "text": "Wow!", "face": "happy"},
+    {"char": "Andrew", "text": "I don't think that's ", "wait": 0},
+    {"char": "Misha",  "text": "I am a biology major.", "face": "annoyed"},
+    {"char": "Killi",  "text": "It's true!", "face": "happy"},
+    {"char": "Killi",  "text": "She is!", "face": "happy"},
+    {"char": "Andrew", "text": "Never mind."}
+  ]
+}
