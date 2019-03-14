@@ -13,7 +13,7 @@
     {"char": "Killi",  "text": "It’s a restaurant. So there might be tons in the kitchen."}
     {"char": "Killi", "text": "Do you think he will get out of the bar before being short of food.", "wait":0.5},
     {"char": "Andrew",  "text": "No. People died for stubbornness."},
-    {"char": "Misha",  "text": "Do you mean that people will not die if they are not stubborn?"}
+    {"char": "Misha",  "text": "Do you mean that people will not die if they are not stubborn?","face":"bsod"}
     {"char": "Andrew",  "text": "Everyone is stubborn is some way."}
     {"char": "Andrew",  "text": " And one’s stubborn might cause another one’s death."}
   ]
