@@ -1,0 +1,31 @@
+{
+  "lines": [
+    {"char": "Killi",  "text": "Hey! There's an apple tree!"},
+    {"char": "Misha",  "text": "Let me check if it is infected.","wait":3},
+    {"char": "Misha",  "text": "The apples are good. Let’s take some back."},
+    {"char": "Misha",  "text": "It seems like the forests are not been affected."},
+    {"char": "Andrew", "text": "I don’t think apples can feed our hunger."},
+    {"char": "Misha", "text": "Not quite. Fibers in apples make you feel full. "},
+    {"char": "Andrew",  "text": "Hiking needs energy. We are not waiting for help on a desert island."},
+    {"char": "Killi",  "text": "Desert Island. That’s an interesting topic."},
+    {"char": "Killi",  "text": "What will you do if you are stranded on a desert island with a chicken and a bag of corn?"},
+    {"char": "Misha",  "text": "Chicken corn soup!"},
+    {"char": "Andrew",  "text": "Satisfy our appetite first can bring positive emotions, which is good for starting exploring the island."},
+    {"char": "Andrew",  "text": "But it is too risky. Maybe I cannot find anything else."}
+    {"char": "Andrew",  "text": "The standard answer is first the chicken, then the corn."}
+    {"char": "Andrew",  "text": "You will have less chicken or corn to eat if you first eat the corn."}
+    {"char": "Andrew",  "text": "But I think it depends on how much corn we have."}
+    {"char": "Killi",  "text": "So what if we are stranded on a desert island with a small bag of corn? Nothing else you can eat."},
+    {"char": "Misha",  "text": "I like the taste of roasted human skin."},
+    {"char": "Andrew",  "text": "!!!","face": "shocked"},
+    {"char": "Misha",  "text": "Sunburn is the gift of nature"},
+    {"char": "Andrew",  "text": "Ummmm..."},
+    {"char": "Andrew",  "text": "Why didn’t we prepare enough food in the cabin, Killi?"},
+    {"char": "Andrew",  "text": "We plan to stay there for seven days, right? But you only prepare food for three days."},
+    {"char": "Andrew",  "text": "Are you planning for hunting?"},
+    {"char": "Killi",  "text": "Yes. You get it!"},
+    {"char": "Andrew",  "text": "But what if we take nothing back?"},
+    {"char": "Killi",  "text": "Call food delivery. Doomoonoo Express had its service in this forest."},
+    {"char": "Andrew",  "text": "Ah? So weird."},
+  ]
+}
