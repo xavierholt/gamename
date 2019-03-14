@@ -41,13 +41,13 @@ func pave(direction):
 func wall(direction):
 	var rng = range(1450, 1751, 100)
 	if direction == NORTH:
-		for x in rng: plant(x, 50)
+		for x in rng: add_tree(x, 50)
 	elif direction == SOUTH:
-		for x in rng: plant(x, 3150)
+		for x in rng: add_tree(x, 3150)
 	elif direction == EAST:
-		for y in rng: plant(3150, y)
+		for y in rng: add_tree(3150, y)
 	elif direction == WEST:
-		for y in rng: plant(50, y)
+		for y in rng: add_tree(50, y)
 	else:
 		print("Unknown direction!")
 		return
@@ -68,7 +68,8 @@ func offset(direction):
 func _ready():
 	tiles = get_node('Tiles')
 	trees = get_parent().get_node('YSort')
-	get_node('Area').connect('body_entered', self, 'ensure_next')
+	get_node('Center').connect('body_entered', self, 'center_entered')
+	get_node('Totality').connect('body_entered', self, 'ensure_next')
 
 func setup(node):
 	self.node = node
@@ -80,26 +81,26 @@ func setup(node):
 		else:
 			wall(i)
 	setup_signs()
-	foliate()
+	setup_trees()
 
-func plant(x, y):
+func add_tree(x, y):
 	var tree = anytree.instance()
 	trees.add_child(tree)
 	tree.position = position + Vector2(x, y)
 
-func foliate():
+func setup_trees():
 	for a in range(0, 91, 4.5):
 		var x = 1300 * cos(deg2rad(a))
 		var y = 1300 * sin(deg2rad(a))
-		plant(1350 - x, 1350 - y)
-		plant(1850 + x, 1350 - y)
-		plant(1850 + x, 1850 + y)
-		plant(1350 - x, 1850 + y)
+		add_tree(1350 - x, 1350 - y)
+		add_tree(1850 + x, 1350 - y)
+		add_tree(1850 + x, 1850 + y)
+		add_tree(1350 - x, 1850 + y)
 	for i in range(50):
 		var x = randi() % 3200
 		var y = randi() % 3200
 		var c = tiles.get_cell(x/100, y/100)
-		if c == 0: plant(x, y)
+		if c == 0: add_tree(x, y)
 
 func add_sign(x, y):
 	var s = anysign.instance()
@@ -129,3 +130,8 @@ func ensure_next(body):
 			var t = scene.instance()
 			get_parent().add_child_below_node(self, t)
 			t.setup(n)
+
+func center_entered(body):
+	if node.arity() < 3: return
+	if not "character" in body: return
+	get_node("/root/Game").auto_conversation("walk")

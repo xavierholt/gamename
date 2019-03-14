@@ -1,0 +1,20 @@
+{
+  "lines": [
+    {"char": "Andrew", "text": "You know what I just realized?"},
+    {"char": "Andrew", "text": "Sandwiches!"},
+    {"char": "Andrew", "text": "What if it really is the end of the world?"},
+    {"char": "Andrew", "text": "What if I never eat another sandwich again?"},
+    {"char": "Misha",  "text": "That's... bleak."},
+    {"char": "Andrew", "text": "I know!"},
+    {"char": "Andrew", "text": "It just suddenly hit home."},
+    {"char": "Andrew", "text": "I don't think I even remember my last sandwich..."},
+    {"char": "Andrew", "text": "I should have paid more attention."},
+    {"char": "Andrew", "text": "What a waste...", "wait": 2},
+    {"char": "Killi",  "text": "I remember mine!"},
+    {"char": "Killi",  "text": "It had kiwis and baloney and cool whip!"},
+    {"char": "Killi",  "text": "I ate it on a Tuesday."},
+    {"char": "Misha",  "text": ". . .", "ping": 0.5},
+    {"char": "Andrew", "text": "Never mind."},
+    {"char": "Andrew", "text": "Sandwiches are tainted forever."}
+  ]
+}

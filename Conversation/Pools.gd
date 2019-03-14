@@ -13,7 +13,6 @@ func add(conversation):
 func del(conversation):
 	for pool in pools:
 		pools[pool].erase(conversation)
-	lock(conversation.key)
 
 func get(pool, stats):
 	# TODO: Time constraints!

@@ -27,13 +27,17 @@ func _ready():
 	auto_conversation("walk")
 
 func auto_conversation(pool):
+	var panel = get_node("GUI/Panel")
+	if panel.line: return
+	
 	var c = pools.get(pool, stats)
-	get_node("GUI/Panel").play(c)
+	panel.play(c)
+	pools.del(c)
 
 func load_conversations(path):
 	var dir = Directory.new()
 	dir.open(path)
-	dir.list_dir_begin()
+	dir.list_dir_begin(true, true)
 	
 	var fn = "."
 	while fn != "":
@@ -41,7 +45,6 @@ func load_conversations(path):
 		print("Checkin' out " + path + fn)
 		if fn.get_extension() == "json":
 			var file = File.new()
-			print("Loading " + path + fn + "...")
 			file.open(path + fn, file.READ)
 			var result = JSON.parse(file.get_as_text())
 			if result.error == OK:
@@ -49,7 +52,7 @@ func load_conversations(path):
 				var c = Conversation.new(result.result)
 				pools.add(c)
 				continue
-			print("Parse Error:  ", result.error)
-			print("Error Line:   ", result.error_line)
-			print("Error String: ", result.error_string)
+			print("Error in " + path + fn + " line " + result.error_line)
+			print(" - Error:  ", result.error)
+			print(" - String: ", result.error_string)
 	dir.list_dir_end()
