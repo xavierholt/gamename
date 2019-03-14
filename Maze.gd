@@ -53,7 +53,6 @@ func load_conversations(path):
 				var c = Conversation.new(result.result)
 				pools.add(c)
 				continue
-			print("Error in " + path + fn + " line " + result.error_line)
-			print(" - Error:  ", result.error)
-			print(" - String: ", result.error_string)
+			print("Error in " + path + fn + "!")
+			print(" - Line " + str(result.error_line) + ":  " + result.error_string)
 	dir.list_dir_end()

@@ -89,9 +89,10 @@ func add_tree(x, y):
 	tree.position = position + Vector2(x, y)
 
 func setup_trees():
-	for a in range(0, 91, 4.5):
-		var x = 1300 * cos(deg2rad(a))
-		var y = 1300 * sin(deg2rad(a))
+	for i in range(22):
+		var a = float(i) * PI / 42;
+		var x = 1300 * cos(a)
+		var y = 1300 * sin(a)
 		add_tree(1350 - x, 1350 - y)
 		add_tree(1850 + x, 1350 - y)
 		add_tree(1850 + x, 1850 + y)
@@ -120,10 +121,7 @@ func setup_signs():
 		add_sign(1200, 1850)
 
 func ensure_next(body):
-	# TODO: Be smarter about detecting the player character!
-	if not body.get_script(): return
-#	if not node: return
-
+	if not "character" in body: return
 	var scene = load("res://Mapping/PathTile.tscn")
 	for n in node.neighbors:
 		if n and n.tile == null:
