@@ -1,3 +1,5 @@
+//Dialogue begins after watching the window of the restaurant.
+
 {
   "lines": [
     {"char": "Misha",  "text": "There’ s someone inside, but it's locked"},
@@ -16,3 +18,4 @@
     {"char": "Andrew",  "text": " And one’s stubborn might cause another one’s death."}
   ]
 }
+
