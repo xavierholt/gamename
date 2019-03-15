@@ -1,0 +1,13 @@
+{
+  "lines": [
+    {"char": "Misha",  "text": "I' m right. The boat is here."},
+    {"char": "Andrew",  "text": "Do you have any experience of boating?"},
+    {"char": "Killi",  "text": "I have."},
+    {"char": "Misha",  "text": "Her skill is terrific. She sails the boat for me once I was researching in marine biology."},
+    {"char": "Misha",  "text": "Trust me, we'll have a nice journey on the boat."},
+    {"char": "Andrew",  "text": "The zombies are coming. Let’s get on the boat now."},    
+    {"char": "Misha",  "text": "Our journey has just begun."},
+    {"char": "Andrew",  "text": "Which direction do you prefer?"},
+    {"char": "Killi",  "text": "All roads lead to Rome."},
+  ]
+}
