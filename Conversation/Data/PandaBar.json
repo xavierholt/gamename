@@ -1,4 +1,5 @@
 {
+  "pools": ["pandabar"],
   "lines": [
     {"char": "Misha",  "text": "It is also locked. Animal-shape inside?"},
     {"char": "Killi",  "text": "Zombies? Run!","face":"shocked"},

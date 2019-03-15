@@ -1,4 +1,5 @@
 {
+  "pools": ["balloon"],
   "lines": [
     {"char": "Misha",  "text": "So lucky! We find a hotballoon","face":"happy"},
     {"char": "Killi", "text": "The hotballoon looks pretty awesome."},

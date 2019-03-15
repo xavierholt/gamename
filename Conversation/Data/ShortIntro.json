@@ -1,0 +1,14 @@
+{
+  "pools": ["intro"],
+  "lines": [
+    {"text": "", "wait": 0.5},
+    {"char": "Andrew", "text": "Zombies, huh?", "face": "annoyed"},
+    {"char": "Killi",  "text": "What do we do?  We can't go back..."},
+    {"char": "Misha",  "text": "My dad leaves a boat parked around here."},
+    {"char": "Misha",  "text": "For... business reasons."},
+    {"char": "Killi",  "text": "If we can find that we could go anywhere!", "face": "happy"},
+    {"char": "Misha",  "text": "It should be somewhere to the southeast."},
+    {"char": "Andrew", "text": "Better than staying here."},
+    {"char": "Misha",  "text": "Let's go!"}
+  ]
+}

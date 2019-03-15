@@ -61,7 +61,10 @@ func _ready():
 	killi  = get_node("Map/YSort/Killi")
 	andrew.leader = misha
 	killi.leader  = andrew
-	auto_conversation("walk")
+#	auto_conversation("walk")
+
+	# Pause for the title screen!
+	get_tree().paused = true
 
 func auto_conversation(pool):
 	var panel = get_node("GUI/Panel")
@@ -110,3 +113,14 @@ func ending(name):
 	get_node("Overlay/TheEnd").show()
 	get_node("Overlay/Credits").show()
 	get_tree().paused = true
+
+func _process(delta):
+	if Input.is_action_just_pressed("ui_accept"):
+		var sunrise = get_node("Splash/Sunrise")
+		if not sunrise.visible: return
+		
+		play_conversation("intro")
+		get_node("Overlay/Title").hide()
+		get_node("Overlay/Story").hide()
+		get_tree().paused = false
+		sunrise.hide()

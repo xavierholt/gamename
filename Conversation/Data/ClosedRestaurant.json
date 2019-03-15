@@ -1,6 +1,7 @@
 //Dialogue begins after watching the window of the restaurant.
 
 {
+  "pools": ["restaurant"],
   "lines": [
     {"char": "Misha",  "text": "There’ s someone inside, but it's locked"},
     {"char": "Andrew", "text": "A zombie?"},

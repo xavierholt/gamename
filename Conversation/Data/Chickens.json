@@ -1,4 +1,5 @@
 {
+  "pools": ["chickens"],
   "lines": [
     {"char": "Killi",  "text": "Woah! Look at all those chickens!!", "face": "shocked"},
     {"char": "Misha", "text": "Chickens!", "face": "happy"},

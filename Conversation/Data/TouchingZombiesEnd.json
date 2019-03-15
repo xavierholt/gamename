@@ -1,6 +1,7 @@
 //After touching zombies
 {
-"lines": [
+  "pools": ["zombieend"],
+  "lines": [
     {"char": "Misha",  "text": "Damn. I don’t want to hike anymore","face":"annoyed"},
     {"char": "Killi",  "text": "???","face":"bsod"},
     {"char": "Andrew",  "text": "???","face":"shocked"},

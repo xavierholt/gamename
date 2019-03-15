@@ -1,5 +1,5 @@
 {
-
+  "pools": ["longintro"],
   "lines": [
     {"char": "Andrew",  "text": "It should be our last round. Misha is awake."},
     {"char": "Killi",  "text": "Final Attack! Calvary! Charging from the behind. Break the enemies line. I am gonna to win!"},

@@ -1,4 +1,5 @@
 {
+  "pools": ["boatend"],
   "lines": [
     {"char": "Misha",  "text": "I' m right. The boat is here."},
     {"char": "Andrew", "text": "Do you have any experience of boating?"},

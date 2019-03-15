@@ -19,12 +19,11 @@ func visit(node, amount):
 
 func _process(delta):
 	if Input.is_action_just_pressed("ui_map"):
-		var minimap = get_node("Minimap/Map")
-		if not minimap.visible:
-			var misha = get_node("Map/YSort/Misha")
+		if not self.visible:
+			var misha = get_node("/root/Game/Map/YSort/Misha")
 			get_tree().paused = true
-			minimap.urhere(misha)
-			minimap.show()
+			self.urhere(misha)
+			self.show()
 		else:
 			get_tree().paused = false
-			minimap.hide()
+			self.hide()

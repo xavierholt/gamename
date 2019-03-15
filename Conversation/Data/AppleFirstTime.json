@@ -1,4 +1,5 @@
 {
+  "pools": ["apples"],
   "lines": [
     {"char": "Killi",  "text": "Hey! There's an apple tree!"},
     {"char": "Misha",  "text": "Let me check if it is infected.","wait":3},

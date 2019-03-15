@@ -1,4 +1,5 @@
 {
+  "pools": ["well"],
   "lines": [
     {"char": "Misha",  "text": "A well, let me check if it can be our new water source."},
     {"char": "Killi",  "text": "Wait, why it has some strange writing on it?"},
