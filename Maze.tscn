@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://Maze.gd" type="Script" id=1]
 [ext_resource path="res://Mapping/PathTile.tscn" type="PackedScene" id=2]
@@ -19,6 +19,7 @@
 [ext_resource path="res://Characters/Misha/Faces/happy.png" type="Texture" id=17]
 [ext_resource path="res://MiscFolder/Sunrise.png" type="Texture" id=18]
 [ext_resource path="res://MiscFolder/Sunset.png" type="Texture" id=19]
+[ext_resource path="res://Music.ogg" type="AudioStream" id=20]
 
 [sub_resource type="StyleBoxTexture" id=1]
 
@@ -91,17 +92,14 @@ _sections_unfolded = [ "Pause", "Transform" ]
 [node name="Clubhouse" parent="Map" index="1" instance=ExtResource( 3 )]
 
 position = Vector2( -3200, 0 )
-scale = Vector2( 1, 1 )
 
 [node name="BoatTile" parent="Map" index="2" instance=ExtResource( 4 )]
 
 position = Vector2( 6400, 3200 )
-scale = Vector2( 1, 1 )
 
 [node name="YSort" type="YSort" parent="Map" index="3"]
 
 editor/display_folded = true
-scale = Vector2( 1, 1 )
 sort_enabled = true
 _sections_unfolded = [ "Transform" ]
 __meta__ = {
@@ -283,6 +281,7 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="Splash" type="CanvasLayer" parent="." index="3"]
 
+editor/display_folded = true
 layer = 1
 offset = Vector2( 0, 0 )
 rotation = 0.0
@@ -379,8 +378,8 @@ rental cabin.  Sunday morning.  The last morning of their retreat.  A normal mor
 it would seem, if not for the news report now playing on the television:
 
 Zombies.  Not your typical zombies, perhaps, what with their fixation with giggling and
-animal onesies, but zombies nonetheless.  And the College, it seems, has been turned during
-the night.  Wherever the club goes next, it won't be back to the dorms...[/center]"
+animal onesies, but zombies nonetheless.  And the college, it seems, has been turned
+during the night.  Wherever the club goes next, it won't be back to the dorms...[/center]"
 visible_characters = -1
 percent_visible = 1.0
 meta_underlined = true
@@ -390,8 +389,8 @@ rental cabin.  Sunday morning.  The last morning of their retreat.  A normal mor
 it would seem, if not for the news report now playing on the television:
 
 Zombies.  Not your typical zombies, perhaps, what with their fixation with giggling and
-animal onesies, but zombies nonetheless.  And the College, it seems, has been turned during
-the night.  Wherever the club goes next, it won't be back to the dorms..."
+animal onesies, but zombies nonetheless.  And the college, it seems, has been turned
+during the night.  Wherever the club goes next, it won't be back to the dorms..."
 scroll_active = true
 scroll_following = false
 selection_enabled = false
@@ -413,24 +412,35 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 bbcode_enabled = true
-bbcode_text = "[center]Art:  Makena Sumi
-Story: Francie Wei
-Code: Kevin Burk
+bbcode_text = "[center]Art by Makena Sumi
+Story by Francie Wei
+Code by Kevin Burk
 
-Font:  Comic Neue by Craig Rozynski[/center]"
+Font (Comic Neue) by Craig Rozynski
+Music by Takanori Arisawa[/center]"
 visible_characters = -1
 percent_visible = 1.0
 meta_underlined = true
 tab_size = 4
-text = "Art:  Makena Sumi
-Story: Francie Wei
-Code: Kevin Burk
+text = "Art by Makena Sumi
+Story by Francie Wei
+Code by Kevin Burk
 
-Font:  Comic Neue by Craig Rozynski"
+Font (Comic Neue) by Craig Rozynski
+Music by Takanori Arisawa"
 scroll_active = true
 scroll_following = false
 selection_enabled = false
 override_selected_font_color = false
 _sections_unfolded = [ "BBCode", "Margin" ]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="5"]
+
+stream = ExtResource( 20 )
+volume_db = -10.0
+pitch_scale = 1.0
+autoplay = true
+mix_target = 0
+bus = "Master"
 
 
