@@ -1,44 +1,32 @@
-[gd_scene load_steps=31 format=2]
+[gd_scene load_steps=27 format=2]
 
-[ext_resource path="res://Mapping/PathTile.gd" type="Script" id=1]
-[ext_resource path="res://tiles/TileSet.tres" type="TileSet" id=2]
-[ext_resource path="res://LargeObjects/hideout.png" type="Texture" id=3]
-[ext_resource path="res://Trees/Scenes/Cluster01.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Trees/Scenes/Cluster02.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Trees/Scenes/Cluster03.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Trees/Scenes/Cluster04.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Trees/Scenes/Cluster05.tscn" type="PackedScene" id=8]
-[ext_resource path="res://Trees/Scenes/Cluster06.tscn" type="PackedScene" id=9]
-[ext_resource path="res://Trees/Scenes/Cluster07.tscn" type="PackedScene" id=10]
-[ext_resource path="res://Trees/Scenes/Cluster09.tscn" type="PackedScene" id=11]
-[ext_resource path="res://Trees/Scenes/Cluster10.tscn" type="PackedScene" id=12]
-[ext_resource path="res://Trees/Scenes/BigCluster01.tscn" type="PackedScene" id=13]
-[ext_resource path="res://Trees/Scenes/BigCluster04.tscn" type="PackedScene" id=14]
-[ext_resource path="res://Trees/Scenes/BigCluster11.tscn" type="PackedScene" id=15]
-[ext_resource path="res://Trees/Scenes/BigCluster03.tscn" type="PackedScene" id=16]
-[ext_resource path="res://Trees/Scenes/BigCluster02.tscn" type="PackedScene" id=17]
-[ext_resource path="res://Trees/Scenes/AnyTree.tscn" type="PackedScene" id=18]
-[ext_resource path="res://Trees/Scenes/AnyGiantTree.tscn" type="PackedScene" id=19]
-[ext_resource path="res://Trees/Scenes/BigCluster10.tscn" type="PackedScene" id=20]
-[ext_resource path="res://Props/CampSite.tscn" type="PackedScene" id=21]
-[ext_resource path="res://Props/Rock1.tscn" type="PackedScene" id=22]
-[ext_resource path="res://Props/Rock2.tscn" type="PackedScene" id=23]
-[ext_resource path="res://Mapping/Clicker.gd" type="Script" id=24]
+[ext_resource path="res://tiles/TileSet.tres" type="TileSet" id=1]
+[ext_resource path="res://LargeObjects/hideout.png" type="Texture" id=2]
+[ext_resource path="res://Trees/Scenes/Cluster01.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Trees/Scenes/Cluster02.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Trees/Scenes/Cluster03.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Trees/Scenes/Cluster04.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Trees/Scenes/Cluster05.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Trees/Scenes/Cluster06.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Trees/Scenes/Cluster07.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Trees/Scenes/Cluster09.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Trees/Scenes/Cluster10.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Trees/Scenes/BigCluster01.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Trees/Scenes/BigCluster04.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Trees/Scenes/BigCluster11.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Trees/Scenes/BigCluster03.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Trees/Scenes/BigCluster02.tscn" type="PackedScene" id=16]
+[ext_resource path="res://Trees/Scenes/AnyTree.tscn" type="PackedScene" id=17]
+[ext_resource path="res://Trees/Scenes/AnyGiantTree.tscn" type="PackedScene" id=18]
+[ext_resource path="res://Trees/Scenes/BigCluster10.tscn" type="PackedScene" id=19]
+[ext_resource path="res://Props/CampSite.tscn" type="PackedScene" id=20]
+[ext_resource path="res://Props/Rock1.tscn" type="PackedScene" id=21]
+[ext_resource path="res://Props/Rock2.tscn" type="PackedScene" id=22]
 
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
 extents = Vector2( 100, 100 )
-
-[sub_resource type="RectangleShape2D" id=2]
-
-custom_solver_bias = 0.0
-extents = Vector2( 1600, 1600 )
-
-[sub_resource type="RectangleShape2D" id=6]
-
-custom_solver_bias = 0.0
-extents = Vector2( 400, 400 )
 
 [sub_resource type="RectangleShape2D" id=3]
 
@@ -55,10 +43,8 @@ extents = Vector2( 1600, 100 )
 custom_solver_bias = 0.0
 extents = Vector2( 1600, 100 )
 
-[node name="PathTile" type="Node2D" index="0"]
+[node name="Clubhouse" type="Node2D" index="0"]
 
-scale = Vector2( 0.25, 0.25 )
-script = ExtResource( 1 )
 _sections_unfolded = [ "Transform" ]
 __meta__ = {
 "_edit_lock_": true
@@ -67,7 +53,7 @@ __meta__ = {
 [node name="Tiles" type="TileMap" parent="." index="0"]
 
 mode = 0
-tile_set = ExtResource( 2 )
+tile_set = ExtResource( 1 )
 cell_size = Vector2( 100, 100 )
 cell_quadrant_size = 16
 cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
@@ -90,6 +76,7 @@ __meta__ = {
 
 [node name="YSort" type="YSort" parent="." index="1"]
 
+editor/display_folded = true
 sort_enabled = true
 
 [node name="Clubhouse" type="StaticBody2D" parent="YSort" index="0"]
@@ -110,186 +97,143 @@ shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="YSort/Clubhouse" index="1"]
 
-texture = ExtResource( 3 )
+texture = ExtResource( 2 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="StaticBody2D" parent="YSort" index="1" instance=ExtResource( 4 )]
+[node name="StaticBody2D" parent="YSort" index="1" instance=ExtResource( 3 )]
 
 position = Vector2( 88, 822 )
 
-[node name="StaticBody2D2" parent="YSort" index="2" instance=ExtResource( 5 )]
+[node name="StaticBody2D2" parent="YSort" index="2" instance=ExtResource( 4 )]
 
 position = Vector2( 2562, 1200 )
 
-[node name="StaticBody2D3" parent="YSort" index="3" instance=ExtResource( 6 )]
+[node name="StaticBody2D3" parent="YSort" index="3" instance=ExtResource( 5 )]
 
 position = Vector2( 1854, 2654 )
 
-[node name="StaticBody2D4" parent="YSort" index="4" instance=ExtResource( 7 )]
+[node name="StaticBody2D4" parent="YSort" index="4" instance=ExtResource( 6 )]
 
 position = Vector2( 636, 1396 )
 
-[node name="StaticBody2D5" parent="YSort" index="5" instance=ExtResource( 8 )]
+[node name="StaticBody2D5" parent="YSort" index="5" instance=ExtResource( 7 )]
 
 position = Vector2( 1570, 1130 )
 
-[node name="StaticBody2D6" parent="YSort" index="6" instance=ExtResource( 9 )]
+[node name="StaticBody2D6" parent="YSort" index="6" instance=ExtResource( 8 )]
 
 position = Vector2( 2090, 930 )
 
-[node name="StaticBody2D7" parent="YSort" index="7" instance=ExtResource( 10 )]
+[node name="StaticBody2D7" parent="YSort" index="7" instance=ExtResource( 9 )]
 
 position = Vector2( 1524, 1858 )
 
-[node name="StaticBody2D9" parent="YSort" index="8" instance=ExtResource( 11 )]
+[node name="StaticBody2D9" parent="YSort" index="8" instance=ExtResource( 10 )]
 
 position = Vector2( 1016, 2136 )
 
-[node name="StaticBody2D10" parent="YSort" index="9" instance=ExtResource( 12 )]
+[node name="StaticBody2D10" parent="YSort" index="9" instance=ExtResource( 11 )]
 
 position = Vector2( 1292, 766 )
 
-[node name="StaticBody2D11" parent="YSort" index="10" instance=ExtResource( 13 )]
+[node name="StaticBody2D11" parent="YSort" index="10" instance=ExtResource( 12 )]
 
 position = Vector2( 2164, 3344 )
 
-[node name="StaticBody2D12" parent="YSort" index="11" instance=ExtResource( 14 )]
+[node name="StaticBody2D12" parent="YSort" index="11" instance=ExtResource( 13 )]
 
 position = Vector2( 724, 3168 )
 
-[node name="StaticBody2D13" parent="YSort" index="12" instance=ExtResource( 15 )]
+[node name="StaticBody2D13" parent="YSort" index="12" instance=ExtResource( 14 )]
 
 position = Vector2( 272, 2208 )
 
-[node name="StaticBody2D14" parent="YSort" index="13" instance=ExtResource( 16 )]
+[node name="StaticBody2D14" parent="YSort" index="13" instance=ExtResource( 15 )]
 
 position = Vector2( 2444, 456 )
 
-[node name="StaticBody2D15" parent="YSort" index="14" instance=ExtResource( 17 )]
+[node name="StaticBody2D15" parent="YSort" index="14" instance=ExtResource( 16 )]
 
 position = Vector2( 696, 408 )
 
-[node name="StaticBody2D16" parent="YSort" index="15" instance=ExtResource( 12 )]
+[node name="StaticBody2D16" parent="YSort" index="15" instance=ExtResource( 11 )]
 
 position = Vector2( 2696, 804 )
 
-[node name="AnyTree" parent="YSort" index="16" instance=ExtResource( 18 )]
+[node name="AnyTree" parent="YSort" index="16" instance=ExtResource( 17 )]
 
 position = Vector2( 360, 500 )
 
-[node name="AnyTree2" parent="YSort" index="17" instance=ExtResource( 18 )]
+[node name="AnyTree2" parent="YSort" index="17" instance=ExtResource( 17 )]
 
 position = Vector2( 436, 892 )
 
-[node name="AnyTree3" parent="YSort" index="18" instance=ExtResource( 18 )]
+[node name="AnyTree3" parent="YSort" index="18" instance=ExtResource( 17 )]
 
 position = Vector2( 290, 918 )
 
-[node name="AnyTree4" parent="YSort" index="19" instance=ExtResource( 18 )]
+[node name="AnyTree4" parent="YSort" index="19" instance=ExtResource( 17 )]
 
 position = Vector2( 196, 1196 )
 
-[node name="AnyTree5" parent="YSort" index="20" instance=ExtResource( 18 )]
+[node name="AnyTree5" parent="YSort" index="20" instance=ExtResource( 17 )]
 
 position = Vector2( 774, 642 )
 
-[node name="AnyTree6" parent="YSort" index="21" instance=ExtResource( 18 )]
+[node name="AnyTree6" parent="YSort" index="21" instance=ExtResource( 17 )]
 
 position = Vector2( 2214, 1438 )
 
-[node name="AnyTree10" parent="YSort" index="22" instance=ExtResource( 18 )]
+[node name="AnyTree10" parent="YSort" index="22" instance=ExtResource( 17 )]
 
 position = Vector2( 3150, 1252 )
 
-[node name="AnyTree11" parent="YSort" index="23" instance=ExtResource( 18 )]
+[node name="AnyTree11" parent="YSort" index="23" instance=ExtResource( 17 )]
 
 position = Vector2( 3066, 1180 )
 
-[node name="AnyTree12" parent="YSort" index="24" instance=ExtResource( 18 )]
+[node name="AnyTree12" parent="YSort" index="24" instance=ExtResource( 17 )]
 
 position = Vector2( 3134, 960 )
 
-[node name="AnyTree7" parent="YSort" index="25" instance=ExtResource( 18 )]
+[node name="AnyTree7" parent="YSort" index="25" instance=ExtResource( 17 )]
 
 position = Vector2( 804, 2322 )
 
-[node name="AnyTree8" parent="YSort" index="26" instance=ExtResource( 18 )]
+[node name="AnyTree8" parent="YSort" index="26" instance=ExtResource( 17 )]
 
 position = Vector2( 2222, 2122 )
 
-[node name="AnyTree9" parent="YSort" index="27" instance=ExtResource( 18 )]
+[node name="AnyTree9" parent="YSort" index="27" instance=ExtResource( 17 )]
 
 position = Vector2( 2282, 2204 )
 
-[node name="AnyGiantTree" parent="YSort" index="28" instance=ExtResource( 19 )]
+[node name="AnyGiantTree" parent="YSort" index="28" instance=ExtResource( 18 )]
 
 position = Vector2( 382, 1048 )
 
-[node name="AnyGiantTree2" parent="YSort" index="29" instance=ExtResource( 19 )]
+[node name="AnyGiantTree2" parent="YSort" index="29" instance=ExtResource( 18 )]
 
 position = Vector2( 2978, 1048 )
 
-[node name="StaticBody2D17" parent="YSort" index="30" instance=ExtResource( 20 )]
+[node name="StaticBody2D17" parent="YSort" index="30" instance=ExtResource( 19 )]
 
 position = Vector2( 2872, 2600 )
 
-[node name="CampSite" parent="YSort" index="31" instance=ExtResource( 21 )]
+[node name="CampSite" parent="YSort" index="31" instance=ExtResource( 20 )]
 
 position = Vector2( 1120, 2436 )
 
-[node name="Rock1" parent="YSort" index="32" instance=ExtResource( 22 )]
+[node name="Rock1" parent="YSort" index="32" instance=ExtResource( 21 )]
 
 position = Vector2( 870, 2292 )
 
-[node name="Rock2" parent="YSort" index="33" instance=ExtResource( 23 )]
+[node name="Rock2" parent="YSort" index="33" instance=ExtResource( 22 )]
 
 position = Vector2( 2138, 1378 )
 
-[node name="Totality" type="Area2D" parent="." index="2"]
+[node name="StaticBody2D" type="StaticBody2D" parent="." index="2"]
 
-editor/display_folded = true
-visible = false
-position = Vector2( 1600, 1600 )
-input_pickable = true
-gravity_vec = Vector2( 0, 1 )
-gravity = 98.0
-linear_damp = 0.1
-angular_damp = 1.0
-audio_bus_override = false
-audio_bus_name = "Master"
-script = ExtResource( 24 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Totality" index="0"]
-
-position = Vector2( -4, 0 )
-shape = SubResource( 2 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Center" type="Area2D" parent="." index="3"]
-
-editor/display_folded = true
-visible = false
-position = Vector2( 1600, 1600 )
-input_pickable = true
-gravity_vec = Vector2( 0, 1 )
-gravity = 98.0
-linear_damp = 0.1
-angular_damp = 1.0
-audio_bus_override = false
-audio_bus_name = "Master"
-_sections_unfolded = [ "Transform" ]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Center" index="0"]
-
-shape = SubResource( 6 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="StaticBody2D" type="StaticBody2D" parent="." index="4"]
-
-editor/display_folded = true
 visible = false
 input_pickable = false
 collision_layer = 1

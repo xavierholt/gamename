@@ -1,40 +1,22 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Maze.gd" type="Script" id=1]
 [ext_resource path="res://Mapping/PathTile.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Characters/Misha.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Characters/Andrew.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Characters/Killi.tscn" type="PackedScene" id=5]
-[ext_resource path="res://MiscFolder/textbox3.png" type="Texture" id=6]
-[ext_resource path="res://MiscFolder/textbox6.png" type="Texture" id=7]
-[ext_resource path="res://Conversation/Player.gd" type="Script" id=8]
-[ext_resource path="res://Characters/Misha/Faces/default.png" type="Texture" id=9]
-[ext_resource path="res://Fonts/ComicNeue-Regular.ttf" type="DynamicFontData" id=10]
-[ext_resource path="res://Minimap.gd" type="Script" id=11]
-[ext_resource path="res://MiscFolder/MapPage.png" type="Texture" id=12]
-[ext_resource path="res://Mapping/Tiles/TileSet.tres" type="TileSet" id=13]
-[ext_resource path="res://Characters/Misha/Faces/happy.png" type="Texture" id=14]
+[ext_resource path="res://Mapping/Landmarks/Clubhouse.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Characters/Misha.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Characters/Andrew.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Characters/Killi.tscn" type="PackedScene" id=6]
+[ext_resource path="res://MiscFolder/textbox3.png" type="Texture" id=7]
+[ext_resource path="res://MiscFolder/textbox6.png" type="Texture" id=8]
+[ext_resource path="res://Conversation/Player.gd" type="Script" id=9]
+[ext_resource path="res://Characters/Misha/Faces/default.png" type="Texture" id=10]
+[ext_resource path="res://Fonts/ComicNeue-Regular.ttf" type="DynamicFontData" id=11]
+[ext_resource path="res://Minimap.gd" type="Script" id=12]
+[ext_resource path="res://MiscFolder/MapPage.png" type="Texture" id=13]
+[ext_resource path="res://Mapping/Tiles/TileSet.tres" type="TileSet" id=14]
+[ext_resource path="res://Characters/Misha/Faces/happy.png" type="Texture" id=15]
 
 [sub_resource type="StyleBoxTexture" id=1]
-
-content_margin_left = -1.0
-content_margin_right = -1.0
-content_margin_top = -1.0
-content_margin_bottom = -1.0
-texture = ExtResource( 6 )
-region_rect = Rect2( 0, 0, 1200, 120 )
-margin_left = 0.0
-margin_right = 0.0
-margin_top = 0.0
-margin_bottom = 0.0
-expand_margin_left = 0.0
-expand_margin_right = 0.0
-expand_margin_top = 0.0
-expand_margin_bottom = 0.0
-modulate_color = Color( 1, 1, 1, 1 )
-draw_center = true
-
-[sub_resource type="StyleBoxTexture" id=2]
 
 content_margin_left = -1.0
 content_margin_right = -1.0
@@ -53,12 +35,31 @@ expand_margin_bottom = 0.0
 modulate_color = Color( 1, 1, 1, 1 )
 draw_center = true
 
+[sub_resource type="StyleBoxTexture" id=2]
+
+content_margin_left = -1.0
+content_margin_right = -1.0
+content_margin_top = -1.0
+content_margin_bottom = -1.0
+texture = ExtResource( 8 )
+region_rect = Rect2( 0, 0, 1200, 120 )
+margin_left = 0.0
+margin_right = 0.0
+margin_top = 0.0
+margin_bottom = 0.0
+expand_margin_left = 0.0
+expand_margin_right = 0.0
+expand_margin_top = 0.0
+expand_margin_bottom = 0.0
+modulate_color = Color( 1, 1, 1, 1 )
+draw_center = true
+
 [sub_resource type="DynamicFont" id=3]
 
 size = 32
 use_mipmaps = false
 use_filter = false
-font_data = ExtResource( 10 )
+font_data = ExtResource( 11 )
 _sections_unfolded = [ "Font", "Settings" ]
 
 [node name="Game" type="Node" index="0"]
@@ -75,35 +76,40 @@ _sections_unfolded = [ "Pause", "Transform" ]
 
 [node name="PathTile" parent="Map" index="0" instance=ExtResource( 2 )]
 
-_sections_unfolded = [ "Transform" ]
+[node name="Clubhouse" parent="Map" index="1" instance=ExtResource( 3 )]
 
-[node name="YSort" type="YSort" parent="Map" index="1"]
+position = Vector2( -3200, 0 )
+scale = Vector2( 1, 1 )
+
+[node name="YSort" type="YSort" parent="Map" index="2"]
 
 editor/display_folded = true
+scale = Vector2( 1, 1 )
 sort_enabled = true
 _sections_unfolded = [ "Transform" ]
 __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Misha" parent="Map/YSort" index="0" instance=ExtResource( 3 )]
+[node name="Misha" parent="Map/YSort" index="0" instance=ExtResource( 4 )]
 
-position = Vector2( 1600, 1600 )
+position = Vector2( -2107.5, 1177.5 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="Andrew" parent="Map/YSort" index="1" instance=ExtResource( 4 )]
+[node name="Andrew" parent="Map/YSort" index="1" instance=ExtResource( 5 )]
 
-position = Vector2( 1500, 1500 )
+position = Vector2( -2002.5, 1270 )
 _sections_unfolded = [ "Transform", "Z Index" ]
 
-[node name="Killi" parent="Map/YSort" index="2" instance=ExtResource( 5 )]
+[node name="Killi" parent="Map/YSort" index="2" instance=ExtResource( 6 )]
 
-position = Vector2( 1550, 1400 )
+position = Vector2( -2087.5, 1295 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="GUI" type="CanvasLayer" parent="." index="1"]
 
 pause_mode = 1
+editor/display_folded = true
 layer = 1
 offset = Vector2( 0, 0 )
 rotation = 0.0
@@ -113,7 +119,6 @@ _sections_unfolded = [ "Pause" ]
 
 [node name="Panel" type="Panel" parent="GUI" index="0"]
 
-editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 1.0
 anchor_right = 1.0
@@ -130,13 +135,13 @@ size_flags_horizontal = 1
 size_flags_vertical = 1
 custom_styles/panelf = SubResource( 1 )
 custom_styles/panel = SubResource( 2 )
-script = ExtResource( 8 )
+script = ExtResource( 9 )
 _sections_unfolded = [ "custom_styles" ]
 
 [node name="Portrait" type="Sprite" parent="GUI/Panel" index="0"]
 
 position = Vector2( 100, 0 )
-texture = ExtResource( 9 )
+texture = ExtResource( 10 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Dialog" type="Label" parent="GUI/Panel" index="1"]
@@ -165,6 +170,7 @@ _sections_unfolded = [ "Margin" ]
 
 [node name="Minimap" type="CanvasLayer" parent="." index="2"]
 
+editor/display_folded = true
 layer = 1
 offset = Vector2( 0, 0 )
 rotation = 0.0
@@ -175,20 +181,20 @@ transform = Transform2D( 1, 0, 0, 1, 0, 0 )
 
 visible = false
 position = Vector2( 512, 300 )
-script = ExtResource( 11 )
+script = ExtResource( 12 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Paper" type="Sprite" parent="Minimap/Map" index="0"]
 
 scale = Vector2( 0.5, 0.5 )
-texture = ExtResource( 12 )
+texture = ExtResource( 13 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Paths" type="TileMap" parent="Minimap/Map" index="1"]
 
 position = Vector2( -250, -250 )
 mode = 0
-tile_set = ExtResource( 13 )
+tile_set = ExtResource( 14 )
 cell_size = Vector2( 50, 50 )
 cell_quadrant_size = 16
 cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
@@ -231,7 +237,7 @@ _sections_unfolded = [ "Transform" ]
 [node name="Player" type="Sprite" parent="Minimap/Map/Points" index="0"]
 
 scale = Vector2( 0.2, 0.2 )
-texture = ExtResource( 14 )
+texture = ExtResource( 15 )
 _sections_unfolded = [ "Transform" ]
 
 

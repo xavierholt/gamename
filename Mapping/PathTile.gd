@@ -134,6 +134,6 @@ func entered(body):
 	minimap.visit(node, 2)
 
 func centered(body):
-	if node.arity() < 3: return
 	if not "character" in body: return
+	if node.arity() < 3: return
 	get_node("/root/Game").auto_conversation("walk")
