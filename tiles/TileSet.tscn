@@ -10,7 +10,7 @@
 custom_solver_bias = 0.0
 extents = Vector2( 50, 50 )
 
-[node name="Node" type="Node"]
+[node name="Node" type="Node" index="0"]
 
 [node name="Grass" type="Sprite" parent="." index="0"]
 

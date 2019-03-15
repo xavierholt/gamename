@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://Maze.gd" type="Script" id=1]
 [ext_resource path="res://Mapping/PathTile.tscn" type="PackedScene" id=2]
@@ -12,12 +12,13 @@
 [ext_resource path="res://Conversation/Player.gd" type="Script" id=10]
 [ext_resource path="res://Characters/Misha/Faces/default.png" type="Texture" id=11]
 [ext_resource path="res://Fonts/ComicNeue-Regular.ttf" type="DynamicFontData" id=12]
-[ext_resource path="res://Minimap.gd" type="Script" id=13]
-[ext_resource path="res://MiscFolder/MapPage.png" type="Texture" id=14]
-[ext_resource path="res://Mapping/Tiles/TileSet.tres" type="TileSet" id=15]
-[ext_resource path="res://Characters/Misha/Faces/happy.png" type="Texture" id=16]
-[ext_resource path="res://MiscFolder/Sunrise.png" type="Texture" id=17]
-[ext_resource path="res://MiscFolder/Sunset.png" type="Texture" id=18]
+[ext_resource path="res://SmallObjects/map icon.png" type="Texture" id=13]
+[ext_resource path="res://Minimap.gd" type="Script" id=14]
+[ext_resource path="res://MiscFolder/MapPage.png" type="Texture" id=15]
+[ext_resource path="res://Mapping/Tiles/TileSet.tres" type="TileSet" id=16]
+[ext_resource path="res://Characters/Misha/Faces/happy.png" type="Texture" id=17]
+[ext_resource path="res://MiscFolder/Sunrise.png" type="Texture" id=18]
+[ext_resource path="res://MiscFolder/Sunset.png" type="Texture" id=19]
 
 [sub_resource type="StyleBoxTexture" id=1]
 
@@ -58,6 +59,14 @@ modulate_color = Color( 1, 1, 1, 1 )
 draw_center = true
 
 [sub_resource type="DynamicFont" id=3]
+
+size = 32
+use_mipmaps = false
+use_filter = false
+font_data = ExtResource( 12 )
+_sections_unfolded = [ "Font", "Settings" ]
+
+[sub_resource type="DynamicFont" id=4]
 
 size = 32
 use_mipmaps = false
@@ -117,7 +126,6 @@ _sections_unfolded = [ "Transform" ]
 [node name="GUI" type="CanvasLayer" parent="." index="1"]
 
 pause_mode = 1
-editor/display_folded = true
 layer = 1
 offset = Vector2( 0, 0 )
 rotation = 0.0
@@ -176,6 +184,29 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Margin" ]
 
+[node name="MapButton" type="TextureButton" parent="GUI" index="1"]
+
+anchor_left = 1.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 0.0
+margin_left = -95.0
+margin_top = -15.0
+margin_bottom = 100.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+texture_normal = ExtResource( 13 )
+_sections_unfolded = [ "Margin" ]
+
 [node name="Minimap" type="CanvasLayer" parent="." index="2"]
 
 editor/display_folded = true
@@ -189,20 +220,20 @@ transform = Transform2D( 1, 0, 0, 1, 0, 0 )
 
 visible = false
 position = Vector2( 512, 300 )
-script = ExtResource( 13 )
+script = ExtResource( 14 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Paper" type="Sprite" parent="Minimap/Map" index="0"]
 
 scale = Vector2( 0.5, 0.5 )
-texture = ExtResource( 14 )
+texture = ExtResource( 15 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Paths" type="TileMap" parent="Minimap/Map" index="1"]
 
 position = Vector2( -250, -250 )
 mode = 0
-tile_set = ExtResource( 15 )
+tile_set = ExtResource( 16 )
 cell_size = Vector2( 50, 50 )
 cell_quadrant_size = 16
 cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
@@ -245,7 +276,7 @@ _sections_unfolded = [ "Transform" ]
 [node name="Player" type="Sprite" parent="Minimap/Map/Points" index="0"]
 
 scale = Vector2( 0.2, 0.2 )
-texture = ExtResource( 16 )
+texture = ExtResource( 17 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Splash" type="CanvasLayer" parent="." index="3"]
@@ -259,13 +290,81 @@ transform = Transform2D( 1, 0, 0, 1, 0, 0 )
 [node name="Sunrise" type="Sprite" parent="Splash" index="0"]
 
 visible = false
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 centered = false
 
 [node name="Sunset" type="Sprite" parent="Splash" index="1"]
 
 visible = false
-texture = ExtResource( 18 )
+texture = ExtResource( 19 )
 centered = false
+
+[node name="Overlay" type="CanvasLayer" parent="." index="4"]
+
+layer = 1
+offset = Vector2( 0, 0 )
+rotation = 0.0
+scale = Vector2( 1, 1 )
+transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+
+[node name="TheEnd" type="Label" parent="Overlay" index="0"]
+
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -89.0
+margin_top = 40.0
+margin_right = 88.0
+margin_bottom = 72.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 4 )
+text = "~ The End ~"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Margin", "custom_fonts" ]
+
+[node name="Credits" type="RichTextLabel" parent="Overlay" index="1"]
+
+visible = false
+anchor_left = 0.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -200.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = true
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+bbcode_enabled = true
+bbcode_text = "[center]Art:  Makena Sumi
+Story: Francie Wei
+Code: Kevin Burk
+
+Font:  Comic Neue by Craig Rozynski[/center]"
+visible_characters = -1
+percent_visible = 1.0
+meta_underlined = true
+tab_size = 4
+text = "Art:  Makena Sumi
+Story: Francie Wei
+Code: Kevin Burk
+
+Font:  Comic Neue by Craig Rozynski"
+scroll_active = true
+scroll_following = false
+selection_enabled = false
+override_selected_font_color = false
+_sections_unfolded = [ "BBCode", "Margin" ]
 
 

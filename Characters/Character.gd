@@ -79,6 +79,6 @@ func _process(delta):
 			d.y += 1
 		if Input.is_action_pressed('ui_left'):
 			d.x -= 1
-		velocity = d * 200
+		velocity = d * 1000
 		move_and_slide(velocity)
 		lead(d)

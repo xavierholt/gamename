@@ -10,5 +10,7 @@ func enter(body):
 
 func leave(body):
 	if not "character" in body: return
-	# TODO: Pause character movement.
+	get_node("/root/Game/GUI").set_pause_mode(PAUSE_MODE_PROCESS)
+	get_node("/root/Game/Minimap").set_pause_mode(PAUSE_MODE_STOP)
 	get_node("/root/Game").play_conversation("boat")
+	get_tree().paused = true

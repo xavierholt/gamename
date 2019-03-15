@@ -16,3 +16,15 @@ func visit(node, amount):
 		# TODO: Point of interest markers.
 	elif amount >= 1:
 		paths.set_cell(node.x, node.y, 16 + randi() % 8)
+
+func _process(delta):
+	if Input.is_action_just_pressed("ui_map"):
+		var minimap = get_node("Minimap/Map")
+		if not minimap.visible:
+			var misha = get_node("Map/YSort/Misha")
+			get_tree().paused = true
+			minimap.urhere(misha)
+			minimap.show()
+		else:
+			get_tree().paused = false
+			minimap.hide()

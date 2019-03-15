@@ -105,18 +105,8 @@ func load_conversations(path):
 			print(" - Line " + str(result.error_line) + ":  " + result.error_string)
 	dir.list_dir_end()
 
-func _process(delta):
-	if Input.is_action_just_pressed("ui_map"):
-		var minimap = get_node("Minimap/Map")
-		if not minimap.visible:
-			var misha = get_node("Map/YSort/Misha")
-			get_tree().paused = true
-			minimap.urhere(misha)
-			minimap.show()
-		else:
-			get_tree().paused = false
-			minimap.hide()
-
 func ending(name):
 	get_node("Splash/Sunset").show()
+	get_node("Overlay/TheEnd").show()
+	get_node("Overlay/Credits").show()
 	get_tree().paused = true

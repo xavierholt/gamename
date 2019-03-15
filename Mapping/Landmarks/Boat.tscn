@@ -222,6 +222,7 @@ position = Vector2( 664, 2856 )
 position = Vector2( 1641, 2448 )
 frames = SubResource( 2 )
 animation = "default"
+frame = 1
 playing = true
 offset = Vector2( 0, -160 )
 
