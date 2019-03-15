@@ -9,6 +9,7 @@ var minimums = {}
 var time = 0
 
 var pools = ["walk"]
+var stats = {}
 var opens = []
 var locks = []
 
@@ -17,7 +18,10 @@ func _init(data):
 		var line = Line.new(linedata)
 		lines.push_back(line)
 		time += line.time()
+	if "maximums" in data: maximums = data["maximums"]
+	if "minimums" in data: minimums = data["minimums"]
 	if "pools" in data: pools = data["pools"]
+	if "stats" in data: stats = data["stats"]
 	if "opens" in data: opens = data["opens"]
 	if "locks" in data: locks = data["locks"]
 
@@ -36,3 +40,7 @@ func next():
 	var line = lines[index]
 	index += 1
 	return line
+
+func update_stats(smap):
+	for stat in stats:
+		smap.add(stat, stats[stat])

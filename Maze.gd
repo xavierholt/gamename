@@ -32,6 +32,8 @@ func auto_conversation(pool):
 	
 	var c = pools.get(pool, stats)
 	if not c: return
+	
+	c.update_stats(stats)
 	panel.play(c)
 	pools.del(c)
 
@@ -56,3 +58,15 @@ func load_conversations(path):
 			print("Error in " + path + fn + "!")
 			print(" - Line " + str(result.error_line) + ":  " + result.error_string)
 	dir.list_dir_end()
+
+func _process(delta):
+	if Input.is_action_just_pressed("ui_map"):
+		var minimap = get_node("Minimap/Map")
+		if not minimap.visible:
+			var misha = get_node("Map/YSort/Misha")
+			get_tree().paused = true
+			minimap.urhere(misha)
+			minimap.show()
+		else:
+			get_tree().paused = false
+			minimap.hide()

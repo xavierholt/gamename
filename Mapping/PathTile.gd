@@ -68,8 +68,8 @@ func offset(direction):
 func _ready():
 	tiles = get_node('Tiles')
 	trees = get_parent().get_node('YSort')
-	get_node('Center').connect('body_entered', self, 'center_entered')
-	get_node('Totality').connect('body_entered', self, 'ensure_next')
+	get_node('Center').connect('body_entered', self, 'centered')
+	get_node('Totality').connect('body_entered', self, 'entered')
 
 func setup(node):
 	self.node = node
@@ -120,16 +120,20 @@ func setup_signs():
 	if node.neighbors[3]:
 		add_sign(1200, 1850)
 
-func ensure_next(body):
+func entered(body):
 	if not "character" in body: return
-	var scene = load("res://Mapping/PathTile.tscn")
+	var minimap = get_node("/root/Game/Minimap/Map")
+	var scene   = load("res://Mapping/PathTile.tscn")
 	for n in node.neighbors:
-		if n and n.tile == null:
+		if not n: continue
+		if not n.tile:
 			var t = scene.instance()
 			get_parent().add_child_below_node(self, t)
 			t.setup(n)
+		minimap.visit(n, 1)
+	minimap.visit(node, 2)
 
-func center_entered(body):
+func centered(body):
 	if node.arity() < 3: return
 	if not "character" in body: return
 	get_node("/root/Game").auto_conversation("walk")

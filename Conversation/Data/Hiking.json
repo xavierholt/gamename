@@ -18,8 +18,8 @@
 
     {"text": "", "wait": 5},
 
-    {"char": "Misha",  "text": "So... hiking?"},
-    {"char": "Andrew", "text": "It's better than being eaten I guess."},
+    {"char": "Misha",  "text": "So... hiking?", "face": "annoyed"},
+    {"char": "Andrew", "text": "It's better than being eaten by bears."},
     {"char": "Killi",  "text": "Yeah."}
   ]
 }
