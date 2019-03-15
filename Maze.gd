@@ -94,7 +94,6 @@ func load_conversations(path):
 	var fn = "."
 	while fn != "":
 		fn = dir.get_next()
-		print("Checkin' out " + path + fn)
 		if fn.get_extension() == "json":
 			var file = File.new()
 			file.open(path + fn, file.READ)

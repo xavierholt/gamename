@@ -36,7 +36,7 @@ extents = Vector2( 100, 300 )
 custom_solver_bias = 0.0
 extents = Vector2( 300, 100 )
 
-[node name="BoatTile" type="Node2D"]
+[node name="BoatTile" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 _sections_unfolded = [ "Transform" ]
@@ -70,7 +70,6 @@ __meta__ = {
 
 [node name="YSort" type="YSort" parent="." index="1"]
 
-editor/display_folded = true
 sort_enabled = true
 
 [node name="StaticBody2D" parent="YSort" index="0" instance=ExtResource( 3 )]
@@ -219,7 +218,7 @@ position = Vector2( 664, 2856 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="YSort" index="36"]
 
-position = Vector2( 1641, 2448 )
+position = Vector2( 1675, 2434 )
 frames = SubResource( 2 )
 animation = "default"
 frame = 1

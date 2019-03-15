@@ -12,8 +12,9 @@ var node
 var tiles
 var trees
 
-var anytree = load("res://Trees/Scenes/AnyTree.tscn")
-var anysign = load("res://SmallObjects/Scenes/AnySign.tscn")
+var anytree    = load("res://Trees/Scenes/AnyTree.tscn")
+var anycluster = load("res://Trees/Scenes/AnyCluster.tscn")
+var anysign    = load("res://SmallObjects/Scenes/AnySign.tscn")
 
 func pave(direction):
 	var wrange
@@ -88,6 +89,11 @@ func add_tree(x, y):
 	trees.add_child(tree)
 	tree.position = position + Vector2(x, y)
 
+func add_cluster(x, y):
+	var tree = anycluster.instance()
+	trees.add_child(tree)
+	tree.position = position + Vector2(x, y)
+
 func setup_trees():
 	for i in range(22):
 		var a = float(i) * PI / 42;
@@ -102,6 +108,11 @@ func setup_trees():
 		var y = randi() % 3200
 		var c = tiles.get_cell(x/100, y/100)
 		if c == 0: add_tree(x, y)
+	print("Clustering...")
+	add_cluster( 400,  200)
+	add_cluster(2800,  200)
+	add_cluster(2800, 3100)
+	add_cluster( 400, 3100)
 
 func add_sign(x, y):
 	var s = anysign.instance()
