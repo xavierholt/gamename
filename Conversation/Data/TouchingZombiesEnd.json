@@ -1,3 +1,4 @@
+//After touching zombies
 {
 "lines": [
     {"char": "Misha",  "text": "Damn. I don’t want to hike anymore","face":"annoyed"},
@@ -9,3 +10,4 @@
 
   ]
 }
+//end of the game
