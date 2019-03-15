@@ -3,5 +3,10 @@
     {"char": "Misha",  "text": "So lucky! We find a hotballoon","face":"happy"},
     {"char": "Killi", "text": "The hotballoon looks pretty awesome."},
     {"char": "Andrew", "text": "Goodbye! The Damn forest."},
+    {"char": "Killi", "text": "Are you ready, kids?"},
+    {"char": "Andrew", "text": "Aye-aye, Captain!"},
+    {"char": "Killi", "text": "I can't hear you."},
+    {"char": "Misha", "text": "Aye-aye, Captain!"},
+    {"char": "Killi", "text": "wubba lubba dub du"},
   ]
 }
