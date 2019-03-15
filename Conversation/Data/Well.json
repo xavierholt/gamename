@@ -1,0 +1,15 @@
+{
+  "lines": [
+    {"char": "Misha",  "text": "A well, let me check if it can be our new water source."},
+    {"char": "Killi",  "text": "Wait, why it has some strange writing on it?"},
+    {"char": "Andrew",  "text": "Yeah, who use this well? Why it is here? No one lives nearby."},
+    {"char": "Killi",  "text": "Maybe it is a door to another world."},
+    {"char": "Andrew",  "text": "New World Tale? You can easily get there by touching the zombies."},
+    {"char": "Misha",  "text": "There is water, so it’s to another world."},
+    {"char": "Killi",  "text": "I ’m right in this case."},
+    {"char": "Andrew",  "text": "So can we drink it?"},
+    {"char": "Misha",  "text": "No, the underground water is infected."},
+    {"char": "Andrew",  "text": "…"},
+    {"char": "Killi",  "text": "I ’m always right."},
+  ]
+}
