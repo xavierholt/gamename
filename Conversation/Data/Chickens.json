@@ -1,0 +1,12 @@
+{
+  "lines": [
+    {"char": "Killi",  "text": "Woah! Look at all those chickens!!", "face": "shocked"},
+    {"char": "Misha", "text": "Chickens!", "face": "happy"},
+    {"char": "Andrew", "text": "Chickens."},
+    {"char": "Misha",  "text": "Absolutely catatonic!"},
+    {"char": "Killi",  "text": "???"},
+    {"char": "Andrew", "text": "Catatonic, informal: of or in an immobile or unresponsive stupor."},
+    {"char": "Killi",  "text": "Ouch! Hope they're ok!"},
+    {"char": "Misha",  "text": "Me too."},
+  ]
+}
