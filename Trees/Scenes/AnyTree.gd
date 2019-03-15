@@ -1,4 +1,4 @@
-extends Node2D
+tool extends Node2D
 
 var TREES = [
 	load("res://Trees/Scenes/PineTreeS.tscn"),
@@ -14,4 +14,8 @@ var TREES = [
 
 func _ready():
 	# TODO: Tree type gradients?
-	add_child(TREES[randi() % 9].instance())
+	for child in get_children():
+		child.queue_free()
+	var tree = TREES[randi() % 9].instance()
+	if randi() % 2: tree.scale = Vector2(-1, 1)
+	add_child(tree)

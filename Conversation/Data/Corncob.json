@@ -1,0 +1,13 @@
+{
+  "lines": [
+    {"char": "Andrew", "text": "You can never REALLY eat corn on the cob."},
+    {"char": "Andrew", "text": "You can try to eat it..."},
+    {"char": "Andrew", "text": "...but then it's no longer on the cob!"},
+    {"char": "Killi",  "text": "Woah!", "face": "shocked"},
+    {"char": "Killi",  "text": "Deep..."},
+    {"char": "Misha",  "text": "What if you ate the cob?"},
+    {"char": "Andrew", "text": "Come now, Misha."},
+    {"char": "Andrew", "text": "We are not savages."},
+    {"char": "Misha",  "text": "Speak for yourself."}
+  ]
+}

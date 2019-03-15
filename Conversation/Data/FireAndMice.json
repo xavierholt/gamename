@@ -1,0 +1,11 @@
+{
+  "lines": [
+    {"char": "Andrew", "text": "Fuzzy hats, huh?"},
+    {"char": "Andrew", "text": "I always figured the apocalypse would be..."},
+    {"char": "Andrew", "text": "...you know.  Intimidating."},
+    {"char": "Misha",  "text": "Some say the world will end in fire."},
+    {"char": "Misha",  "text": "Some say in mice."},
+    {"char": "Killi",  "text": "They do?"},
+    {"char": "Killi",  "text": "Weird!", "face": "happy"}
+  ]
+}
