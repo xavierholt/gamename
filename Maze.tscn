@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Maze.gd" type="Script" id=1]
 [ext_resource path="res://Mapping/PathTile.tscn" type="PackedScene" id=2]
@@ -10,12 +10,10 @@
 [ext_resource path="res://Conversation/Player.gd" type="Script" id=8]
 [ext_resource path="res://Characters/Misha/Faces/default.png" type="Texture" id=9]
 [ext_resource path="res://Fonts/ComicNeue-Regular.ttf" type="DynamicFontData" id=10]
-[ext_resource path="res://MiscFolder/MapButton1.png" type="Texture" id=11]
-[ext_resource path="res://MiscFolder/MapButton2.png" type="Texture" id=12]
-[ext_resource path="res://Minimap.gd" type="Script" id=13]
-[ext_resource path="res://MiscFolder/MapPage.png" type="Texture" id=14]
-[ext_resource path="res://Mapping/Tiles/TileSet.tres" type="TileSet" id=15]
-[ext_resource path="res://Characters/Misha/Faces/happy.png" type="Texture" id=16]
+[ext_resource path="res://Minimap.gd" type="Script" id=11]
+[ext_resource path="res://MiscFolder/MapPage.png" type="Texture" id=12]
+[ext_resource path="res://Mapping/Tiles/TileSet.tres" type="TileSet" id=13]
+[ext_resource path="res://Characters/Misha/Faces/happy.png" type="Texture" id=14]
 
 [sub_resource type="StyleBoxTexture" id=1]
 
@@ -72,13 +70,11 @@ _sections_unfolded = [ "Pause" ]
 [node name="Map" type="Node2D" parent="." index="0"]
 
 pause_mode = 1
-editor/display_folded = true
 scale = Vector2( 0.8, 0.8 )
 _sections_unfolded = [ "Pause", "Transform" ]
 
 [node name="PathTile" parent="Map" index="0" instance=ExtResource( 2 )]
 
-position = Vector2( 0, -5 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="YSort" type="YSort" parent="Map" index="1"]
@@ -86,6 +82,9 @@ _sections_unfolded = [ "Transform" ]
 editor/display_folded = true
 sort_enabled = true
 _sections_unfolded = [ "Transform" ]
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Misha" parent="Map/YSort" index="0" instance=ExtResource( 3 )]
 
@@ -105,7 +104,6 @@ _sections_unfolded = [ "Transform" ]
 [node name="GUI" type="CanvasLayer" parent="." index="1"]
 
 pause_mode = 1
-editor/display_folded = true
 layer = 1
 offset = Vector2( 0, 0 )
 rotation = 0.0
@@ -115,6 +113,7 @@ _sections_unfolded = [ "Pause" ]
 
 [node name="Panel" type="Panel" parent="GUI" index="0"]
 
+editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 1.0
 anchor_right = 1.0
@@ -164,32 +163,6 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Margin" ]
 
-[node name="MapButton" type="TextureButton" parent="GUI" index="1"]
-
-visible = false
-anchor_left = 1.0
-anchor_top = 0.0
-anchor_right = 1.0
-anchor_bottom = 0.0
-margin_left = -160.0
-margin_top = -40.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
-texture_normal = ExtResource( 11 )
-texture_pressed = ExtResource( 12 )
-texture_hover = ExtResource( 12 )
-texture_focused = ExtResource( 12 )
-_sections_unfolded = [ "Margin" ]
-
 [node name="Minimap" type="CanvasLayer" parent="." index="2"]
 
 layer = 1
@@ -202,20 +175,20 @@ transform = Transform2D( 1, 0, 0, 1, 0, 0 )
 
 visible = false
 position = Vector2( 512, 300 )
-script = ExtResource( 13 )
+script = ExtResource( 11 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Paper" type="Sprite" parent="Minimap/Map" index="0"]
 
 scale = Vector2( 0.5, 0.5 )
-texture = ExtResource( 14 )
+texture = ExtResource( 12 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Paths" type="TileMap" parent="Minimap/Map" index="1"]
 
 position = Vector2( -250, -250 )
 mode = 0
-tile_set = ExtResource( 15 )
+tile_set = ExtResource( 13 )
 cell_size = Vector2( 50, 50 )
 cell_quadrant_size = 16
 cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
@@ -258,7 +231,7 @@ _sections_unfolded = [ "Transform" ]
 [node name="Player" type="Sprite" parent="Minimap/Map/Points" index="0"]
 
 scale = Vector2( 0.2, 0.2 )
-texture = ExtResource( 16 )
+texture = ExtResource( 14 )
 _sections_unfolded = [ "Transform" ]
 
 
