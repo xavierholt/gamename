@@ -3,6 +3,7 @@ var Line = load("res://Conversation/Line.gd")
 var lines = []
 var index = 0
 
+var ending   = null
 var maximums = {}
 var minimums = {}
 
@@ -18,6 +19,7 @@ func _init(data):
 		var line = Line.new(linedata)
 		lines.push_back(line)
 		time += line.time()
+	if "ending"   in data: ending   = data["ending"]
 	if "maximums" in data: maximums = data["maximums"]
 	if "minimums" in data: minimums = data["minimums"]
 	if "pools" in data: pools = data["pools"]

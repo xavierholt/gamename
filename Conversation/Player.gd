@@ -67,5 +67,7 @@ func _process(delta):
 			line = conversation.next()
 			if line:
 				begin_show()
+			elif conversation.ending:
+				get_node("/root/Game").ending(conversation.ending)
 			else:
 				begin_hide()

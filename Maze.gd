@@ -15,34 +15,45 @@ var map
 var pools
 var stats
 
+func hookup(a, b, dir):
+	a.neighbors[dir] = b
+	b.neighbors[(dir + 2) % 4] = a
+	var src = a.tile.get_node("YSort")
+	var dst = get_node("Map/YSort")
+	for child in src.get_children():
+		var pos = child.get_global_position()
+		src.remove_child(child)
+		child.position.x += 3200 * a.x
+		child.position.y += 3200 * a.y
+		dst.add_child(child)
+
 func _ready():
 	randomize()
+	var w = 2
+	var h = 2
+	map = Map.new(w, h)
 	pools = Pools.new()
 	stats = StatMap.new()
 	load_conversations("res://Conversation/Data/")
 	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 	
-	# Connect to the main map:
-	map = Map.new(10, 10)
-	var enode = map.node(0, 0)
+	# Connect the clubhouse:
 	var cnode = MapNode.new(map, -1, 0)
 	cnode.tile = get_node("Map/Clubhouse")
-	enode.neighbors[3] = cnode
-	cnode.neighbors[1] = enode
+	hookup(cnode, map.node(0, 0), 1)
+	
+	# Connect the boat:
+	var bnode = MapNode.new(map, w, h-1)
+	bnode.tile = get_node("Map/BoatTile")
+	hookup(bnode, map.node(w-1, h-1), 3)
+	bnode.tile.position.x = 3200 *  w
+	bnode.tile.position.y = 3200 * (h - 1)
+	
+	# Fix up the map / minimap:
 	get_node("Map/PathTile").setup(map.node(0, 0))
-	
-	# Fix up the minimap:
 	var minimap = get_node("Minimap/Map")
+	minimap.visit(map.node(0, 0), 1)
 	minimap.visit(cnode, 2)
-	minimap.visit(enode, 1)
-	
-	# Transfer trees to the main map:
-	var src = get_node("Map/Clubhouse/YSort")
-	var dst = get_node("Map/YSort")
-	for child in src.get_children():
-		src.remove_child(child)
-		child.position.x -= 3200
-		dst.add_child(child)
 	
 	# Party time!
 	misha  = get_node("Map/YSort/Misha")
@@ -56,6 +67,15 @@ func auto_conversation(pool):
 	var panel = get_node("GUI/Panel")
 	if panel.line: return
 	
+	var c = pools.get(pool, stats)
+	if not c: return
+	
+	c.update_stats(stats)
+	panel.play(c)
+	pools.del(c)
+
+func play_conversation(pool):
+	var panel = get_node("GUI/Panel")
 	var c = pools.get(pool, stats)
 	if not c: return
 	
@@ -96,3 +116,7 @@ func _process(delta):
 		else:
 			get_tree().paused = false
 			minimap.hide()
+
+func ending(name):
+	get_node("Splash/Sunset").show()
+	get_tree().paused = true

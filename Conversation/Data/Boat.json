@@ -1,0 +1,14 @@
+{
+  "pools": ["boat"],
+  "lines": [
+    {"char": "Killi",  "text": "We made it!", "face": "happy"},
+    {"char": "Misha",  "text": "Finally."},
+    {"char": "Andrew", "text": "So, ummm..."},
+    {"char": "Andrew", "text": "Who knows how to sail?"},
+
+    {"text": "", "wait": 3},
+
+    {"char": "Killi",  "text": "How hard could it possibly be?", "face": "happy", "wait": 2}
+  ],
+  "ending":  "boat"
+}

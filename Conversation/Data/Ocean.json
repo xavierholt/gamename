@@ -1,0 +1,7 @@
+{
+  "pools": ["ocean"],
+  "lines": [
+    {"char": "Misha",  "text": "I can see the ocean!"},
+    {"char": "Killi",  "text": "Yay!", "face": "happy"}
+  ]
+}

@@ -43,7 +43,7 @@ extents = Vector2( 1600, 100 )
 custom_solver_bias = 0.0
 extents = Vector2( 1600, 100 )
 
-[node name="Clubhouse" type="Node2D" index="0"]
+[node name="Clubhouse" type="Node2D"]
 
 _sections_unfolded = [ "Transform" ]
 __meta__ = {
