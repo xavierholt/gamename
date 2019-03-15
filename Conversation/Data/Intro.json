@@ -1,4 +1,8 @@
 //not done
+
+{
+
+  "lines": [
     {"char": "Andrew",  "text": "It should be our last round. Misha is awake."},
     {"char": "Killi",  "text": "Final Attack! Calvary! Charging from the behind. Break the enemies line. I am gonna to win!"},
 Damn.. 1 point."},
@@ -23,3 +27,5 @@ Maybe the harbor?"},
     {"char": "Killi",  "text": "[…]"},
     {"char": "Misha",  "text": "[Choices]"},
     {"char": "Andrew",  "text": "Sounds great. Let’s have a final check with our package and begin our journey."},
+    ]
+}
