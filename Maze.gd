@@ -14,7 +14,7 @@ func _ready():
 	pools = Pools.new()
 	stats = StatMap.new()
 	load_conversations("res://Conversation/Data/")
-#	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
+	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 	
 	map = Map.new(10, 10)
 	get_node("Map/PathTile").setup(map.node(0, 0))
