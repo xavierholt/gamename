@@ -14,7 +14,7 @@ func _ready():
 	pools = Pools.new()
 	stats = StatMap.new()
 	load_conversations("res://Conversation/Data/")
-	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
+#	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 	
 	map = Map.new(10, 10)
 	get_node("Map/PathTile").setup(map.node(0, 0))
@@ -32,6 +32,8 @@ func auto_conversation(pool):
 	
 	var c = pools.get(pool, stats)
 	if not c: return
+	
+	c.update_stats(stats)
 	panel.play(c)
 	pools.del(c)
 
@@ -56,3 +58,15 @@ func load_conversations(path):
 			print("Error in " + path + fn + "!")
 			print(" - Line " + str(result.error_line) + ":  " + result.error_string)
 	dir.list_dir_end()
+
+func _process(delta):
+	if Input.is_action_just_pressed("ui_map"):
+		var minimap = get_node("Minimap/Map")
+		if not minimap.visible:
+			var misha = get_node("Map/YSort/Misha")
+			get_tree().paused = true
+			minimap.urhere(misha)
+			minimap.show()
+		else:
+			get_tree().paused = false
+			minimap.hide()
