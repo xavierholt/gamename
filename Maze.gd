@@ -29,8 +29,8 @@ func hookup(a, b, dir):
 
 func _ready():
 	randomize()
-	var w = 2
-	var h = 2
+	var w = 5
+	var h = 5
 	map = Map.new(w, h)
 	pools = Pools.new()
 	stats = StatMap.new()

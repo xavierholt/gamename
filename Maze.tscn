@@ -84,6 +84,7 @@ _sections_unfolded = [ "Pause" ]
 [node name="Map" type="Node2D" parent="." index="0"]
 
 pause_mode = 1
+editor/display_folded = true
 scale = Vector2( 0.8, 0.8 )
 _sections_unfolded = [ "Pause", "Transform" ]
 
@@ -231,7 +232,7 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="Paths" type="TileMap" parent="Minimap/Map" index="1"]
 
-position = Vector2( -250, -250 )
+position = Vector2( -300, -250 )
 mode = 0
 tile_set = ExtResource( 16 )
 cell_size = Vector2( 50, 50 )
@@ -253,7 +254,7 @@ _sections_unfolded = [ "Cell", "Transform" ]
 
 [node name="Points" type="TileMap" parent="Minimap/Map" index="2"]
 
-position = Vector2( -250, -250 )
+position = Vector2( -300, -250 )
 mode = 0
 tile_set = null
 cell_size = Vector2( 64, 64 )
@@ -303,6 +304,7 @@ centered = false
 
 [node name="Overlay" type="CanvasLayer" parent="." index="4"]
 
+editor/display_folded = true
 layer = 1
 offset = Vector2( 0, 0 )
 rotation = 0.0

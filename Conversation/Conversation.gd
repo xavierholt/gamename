@@ -19,7 +19,10 @@ func _init(data):
 		var line = Line.new(linedata)
 		lines.push_back(line)
 		time += line.time()
-	if "ending"   in data: ending   = data["ending"]
+	if "ending" in data:
+		ending = data["ending"]
+	else:
+		lines.push_back(Line.new({"text": "", "wait": 3}))
 	if "maximums" in data: maximums = data["maximums"]
 	if "minimums" in data: minimums = data["minimums"]
 	if "pools" in data: pools = data["pools"]

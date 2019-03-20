@@ -108,7 +108,6 @@ func setup_trees():
 		var y = randi() % 3200
 		var c = tiles.get_cell(x/100, y/100)
 		if c == 0: add_tree(x, y)
-	print("Clustering...")
 	add_cluster( 400,  200)
 	add_cluster(2800,  200)
 	add_cluster(2800, 3100)
@@ -146,5 +145,5 @@ func entered(body):
 
 func centered(body):
 	if not "character" in body: return
-	if node.arity() < 3: return
+#	if node.arity() < 3: return
 	get_node("/root/Game").auto_conversation("walk")
